@@ -520,8 +520,83 @@
   "source": "sources/hl-alts-ml/a4_summary.json"
  },
  "pp_status": {
-  "value": "pending",
-  "printed": "pending",
-  "source": "sources"
+  "value": "decided",
+  "printed": "decided",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_oos_sr": {
+  "value": -0.8018028060588427,
+  "printed": "-0.80",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_t": {
+  "value": -1.5403344906965515,
+  "printed": "-1.54",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_dsr": {
+  "value": 0.18533910758874256,
+  "printed": "0.19",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_dd": {
+  "value": -17.222434764188232,
+  "printed": "-17%",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_cagr": {
+  "value": 0.46955542191409183,
+  "printed": "+0.5%",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_verdict": {
+  "value": "rejected",
+  "printed": "rejected",
+  "source": "sources/perp-premia/verdict.txt"
+ },
+ "pp_mom_oos_sr": {
+  "value": 0.17839114985377721,
+  "printed": "0.18",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_mom_t": {
+  "value": 0.974266923402838,
+  "printed": "0.97",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_mom_dsr": {
+  "value": 0.10995649592757073,
+  "printed": "0.11",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_mom_dd": {
+  "value": -15.141667568610151,
+  "printed": "-15%",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_mom_cagr": {
+  "value": 4.179781792995119,
+  "printed": "+4.2%",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_mom_verdict": {
+  "value": "rejected",
+  "printed": "rejected",
+  "source": "sources/perp-premia/verdict.txt"
+ },
+ "pp_btc_oos_sr": {
+  "value": 1.145119782511275,
+  "printed": "1.15",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_is_sr": {
+  "value": 2.814194209861917,
+  "printed": "2.81",
+  "source": "sources/perp-premia/results.csv"
+ },
+ "pp_carry_negative_oos": {
+  "value": "all nine",
+  "printed": "all nine",
+  "source": "sources/perp-premia/results.csv"
  }
 }

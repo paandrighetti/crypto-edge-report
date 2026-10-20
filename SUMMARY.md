@@ -22,7 +22,7 @@ rests on and ran once. Full report: [REPORT.md](REPORT.md).
 - **Hyperliquid alts.** The best of 54 long/short cells has a net Sharpe ratio of 0.24
   and a deflated Sharpe ratio of 0.032; machine-learning filters on trend signals predict worse than
   the signals alone. Rejected.
-- **Perpetual premia.** Funding carry and time-series momentum against holding bitcoin: pending.
+- **Perpetual premia.** Funding carry and time-series momentum against holding bitcoin: both rejected.
 
 The passing rules run as frozen paper tests from 30 October and 1 November 2026, with looks fixed in
 advance. Nothing here is traded or advised.

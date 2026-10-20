@@ -254,6 +254,11 @@ def perp_premia(f: Facts) -> None:
         f.put(f"pp_{key}_verdict", "retained" if retained.group(1) == "RETENUE" else "rejected", "",
               SRC / "perp-premia" / "verdict.txt")
     f.put("pp_btc_oos_sr", float(rows["carry_lb7_h10"]["oos_btc_sharpe"]), "{:.2f}", src)
+    f.put("pp_carry_is_sr", float(rows["carry_lb7_h10"]["is_sharpe"]), "{:.2f}", src)
+    carry = [r for k, r in rows.items() if k.startswith("carry_")]
+    claim(len(carry) == 9, "nine carry configurations are reported")
+    negative = sum(float(r["oos_sharpe"]) < 0 for r in carry)
+    f.put("pp_carry_negative_oos", "all nine" if negative == 9 else f"{negative} of the nine", "", src)
 
 
 def build_facts() -> Facts:

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/app/backtest.py", line 277, in <module>
+    main()
+  File "/app/backtest.py", line 252, in main
+    rows = [{**evaluate(k, v, btc, daily_srs), "ann_turnover": float(turnovers[k].mean() * DAYS)}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/backtest.py", line 216, in evaluate
+    row.update({f"{tag}_{k}": v for k, v in alpha_beta(r, btc.reindex(r.index)).items()})
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/backtest.py", line 160, in alpha_beta
+    X = sm.add_constant(df.iloc[:, 1].values)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/statsmodels/tools/tools.py", line 127, in add_constant
+    is_nonzero_const = np.ptp(x, axis=0) == 0
+                       ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/numpy/_core/fromnumeric.py", line 3041, in ptp
+    return _methods._ptp(a, axis=axis, out=out, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/numpy/_core/_methods.py", line 233, in _ptp
+    umr_maximum(a, axis, None, out, keepdims),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation maximum which has no identity

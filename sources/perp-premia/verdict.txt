@@ -1,0 +1,32 @@
+                  full_sharpe  is_sharpe  oos_sharpe  oos_btc_sharpe  oos_t_alpha  full_beta  dsr_full  boot_sharpe_p5  boot_sharpe_p95  full_max_dd  after_tax_cagr  ann_turnover
+strategy                                                                                                                                                                          
+carry_lb3_h5            0.381      3.158      -1.771           1.145       -3.257     -0.001     0.067          -0.612            1.655       -0.205          -0.003        36.346
+carry_lb3_h10           0.280      2.387      -1.023           1.145       -2.038     -0.002     0.051          -0.482            1.756       -0.205          -0.003        35.494
+carry_lb3_h20           1.236      5.125      -0.444           1.145       -0.859     -0.001     0.616           0.270            3.628       -0.085           0.021        15.114
+carry_lb7_h5            1.025      3.439      -1.063           1.145       -2.048     -0.001     0.517          -0.046            2.387       -0.149           0.009        34.026
+carry_lb7_h10           0.549      2.814      -0.802           1.145       -1.540     -0.002     0.185          -0.260            2.134       -0.172           0.005        32.594
+carry_lb7_h20           1.184      5.286      -0.509           1.145       -0.981     -0.001     0.594           0.214            3.553       -0.070           0.021        15.096
+carry_lb14_h5           1.513      3.641      -0.464           1.145       -0.795     -0.002     0.815           0.419            2.946       -0.092           0.019        27.380
+carry_lb14_h10          0.787      2.559      -0.378           1.145       -0.684     -0.002     0.349          -0.053            2.477       -0.138           0.012        25.935
+carry_lb14_h20          1.585      5.735      -0.142           1.145       -0.245     -0.002     0.736           0.520            4.361       -0.065           0.030        10.513
+mom_lb7                -0.509     -0.030      -1.041           1.145       -1.465     -0.055     0.000          -1.122            0.091       -0.490          -0.077        12.726
+mom_lb14                0.549      0.889       0.178           1.145        0.974     -0.046     0.110          -0.007            1.065       -0.151           0.042         8.537
+mom_lb21                0.142      0.429      -0.164           1.145        0.231     -0.046     0.011          -0.424            0.677       -0.252          -0.007         7.613
+mom_lb28                0.658      0.933       0.368           1.145        1.454     -0.045     0.175           0.128            1.157       -0.128           0.050         6.675
+btc_buy_and_hold        0.798        NaN       1.145             NaN          NaN        NaN       NaN             NaN              NaN       -0.766             NaN           NaN
+
+Avertissement : univers = contrats actifs uniquement (biais du survivant), voir PROTOCOL.md.
+
+carry_lb7_h10 : REJETÉE
+  1_oos_sharpe_beats_btc: échec
+  2_oos_t_alpha_gt_2: échec
+  3_dsr_ge_0.95: échec
+  4_max_dd_lt_50pct: ok
+  5_after_tax_cagr_gt_0: ok
+
+mom_lb14 : REJETÉE
+  1_oos_sharpe_beats_btc: échec
+  2_oos_t_alpha_gt_2: échec
+  3_dsr_ge_0.95: échec
+  4_max_dd_lt_50pct: ok
+  5_after_tax_cagr_gt_0: ok

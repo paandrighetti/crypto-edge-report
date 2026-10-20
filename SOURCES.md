@@ -11,6 +11,6 @@ in each folder gives their SHA-256; the test suite checks them.
 | `deribit-gamma` | Deribit dealer gamma | same, `results/deribit-gamma/` and `projects/deribit-gamma/POST_RESULTS-2.md` |
 | `vol-edges` | Volatility forecasts and the weekend strangle | same, `results/vol-edges/` |
 | `hl-alts-ml` | Hyperliquid alts long/short and meta-labeling | research repository, branch `research/managed-beta-92k`, commit `cb264d75a531`, `research/reports/`, `research/PROTOCOL_ALTS_ML.md` and `research/results/` |
-| `perp-premia` | Funding carry and time-series momentum | operations repository, `results/perp-premia-test/` (after its single run) |
+| `perp-premia` | Funding carry and time-series momentum | operations repository, `results/perp-premia-test/` and `projects/perp-premia-test/`, commit 6513bb1cec35 |
 
 Each study's own `REPORT.md` records the commit of the code that ran and the SHA-256 of its protocol.

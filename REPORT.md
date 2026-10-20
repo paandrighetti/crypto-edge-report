@@ -20,7 +20,7 @@ ran once, and reported every design it had registered, including those that fail
 | Dealer gamma | Does option dealers' hedging on Deribit move bitcoin? | no hypothesis passes |
 | Volatility | Does a volatility forecast beat implied volatility, and does a weekend option strangle pay? | the forecast fails; the strangle passes |
 | Hyperliquid alts | Do long/short portfolios of alts, or a machine-learning filter on trend signals, add anything? | rejected |
-| Perpetual premia | Do funding carry and time-series momentum beat holding bitcoin, after costs and tax? | pending |
+| Perpetual premia | Do funding carry and time-series momentum beat holding bitcoin, after costs and tax? | both rejected |
 
 Two designs passed, E3 and T1. They and the order-flow rule E4 now run as frozen forward paper tests
 (section 9). A pass here says the backtest cleared a stated bar; it does not say the edge persists.
@@ -166,8 +166,32 @@ Full results (in French): [ALTS_ML.md](sources/hl-alts-ml/ALTS_ML.md).
 
 ## 8. Funding carry and time-series momentum on Binance perpetuals
 
-Pending. The protocol, frozen on 8 September 2026, tests delta-neutral funding carry and two-week
-time-series momentum on Binance perpetuals against holding bitcoin; its single run is under way.
+The protocol, frozen on 8 September 2026 and run on 20 October 2026, tests two documented premia
+on Binance USDT-margined perpetuals against holding bitcoin: delta-neutral funding carry, long spot
+and short perpetual on the contracts with the highest funding (Schmeling, Schrimpf and Todorov 2023),
+and time-series momentum on the sign of the two-week return, sized to a volatility target (Moskowitz,
+Ooi and Pedersen 2012). A premium is retained only if, for its primary configuration, it beats
+bitcoin's Sharpe ratio out of sample (from 2023), its alpha against bitcoin has a Newey-West t above
+two, its deflated Sharpe ratio is at least 0.95 over the thirteen declared configurations, its
+maximum drawdown stays under 50% and its annual return after a 30% tax on positive years is positive.
+
+| Premium | Out-of-sample Sharpe | Bitcoin's | Alpha t | Deflated Sharpe | Maximum drawdown | Annual return after tax | Verdict |
+|---|---|---|---|---|---|---|---|
+| Funding carry | -0.80 | 1.15 | -1.54 | 0.19 | -17% | +0.5% | rejected |
+| Time-series momentum | 0.18 | 1.15 | 0.97 | 0.11 | -15% | +4.2% | rejected |
+
+Both premia are rejected. The carry earned in sample and stopped earning afterwards: its primary
+configuration had a Sharpe ratio of 2.81 before 2023 and -0.80 after, and the
+out-of-sample Sharpe ratio is negative for all nine carry configurations.
+
+The universe is the contracts listed at the time of the run, so delisted contracts are missing, a
+survivorship bias the protocol states in advance; it favours momentum. A first attempt stopped before
+computing any statistic: a paging error in the collection script had cut the spot price series short,
+which left the bitcoin benchmark without values from June 2022. The script was fixed, spot prices were fetched
+again and the run was started a second and last time
+([PROVENANCE.md](sources/perp-premia/PROVENANCE.md)). Outputs:
+[results.csv](sources/perp-premia/results.csv), [verdict.txt](sources/perp-premia/verdict.txt),
+[protocol](sources/perp-premia/PROTOCOL.md).
 
 ## 9. What runs forward
 
