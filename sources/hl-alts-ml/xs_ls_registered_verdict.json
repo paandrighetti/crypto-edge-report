@@ -1,0 +1,35 @@
+{
+ "tag": "registered",
+ "tradeable_only": false,
+ "rebalance_every": 1,
+ "champion": "mom60/80/rank",
+ "checks": [
+  {
+   "rule": "Sharpe net >= 1.0 a 15 bps",
+   "pass": false,
+   "value": "0.17"
+  },
+  {
+   "rule": "Sharpe deflate P(SR>0) >= 0.95",
+   "pass": false,
+   "value": "0.023"
+  },
+  {
+   "rule": ">= 3 annees positives sur 4",
+   "pass": false,
+   "value": "2/4"
+  },
+  {
+   "rule": "|beta BTC| < 0.2",
+   "pass": true,
+   "value": "-0.059"
+  }
+ ],
+ "verdict": "REJET",
+ "n_trials": 54,
+ "sr0_annual": 1.2414406490657974,
+ "grid_median_sr_net_15": -0.7422131821021816,
+ "grid_median_win_sr_15": -2.8417618033426466,
+ "cells_win_sr_ge_3p5": 0,
+ "seconds": 76
+}

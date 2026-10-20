@@ -1,0 +1,11 @@
+{
+ "trade_days": 1918,
+ "sha256": {
+  "instruments.parquet": "f00458ea1e42dc593cf22b7b3bdb8282058fce8359704b354dca0d7da7b856a6",
+  "candles.parquet": "00734e2e4df30b16cd5cea2268c4d637ea6973a38351c78fa0c1d260e6181d09",
+  "verify_q5.json": "c217e3e13ec86083d49f3411b24564cb5eb9df9ea17397d1a880300a88067b67",
+  "hourly.parquet": "00974cd8f3b4edaa2236116a5f0786fee76b53b5cd05b702d27408e50463ddf9",
+  "gates.json": "a806b0a1a234a9c58f5d7d881a0735576b4d5cb3caeb5b9f6723373ab8ad8dee",
+  "trades (sha256 of the sorted per-day lines)": "c64cc9372c9177af2915dd9701fa42a9b1233f93e6dedc0458497ea8614bdc77"
+ }
+}

@@ -1,0 +1,1493 @@
+{
+ "started_at": "2026-10-12T20:12:57+00:00",
+ "commit": "b3c3fcdae23572606aa20b5914a803f20a5d9c2a",
+ "prereg_sha256": "bf986abb43a530a74ee121d3eac86ae093f389fbd1c65e169b4ad2a9d026bf5e",
+ "code_sha256": {
+  "src/cfe/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "src/cfe/collect.py": "3833ed241b8e9505ac6d16e5a779dcab6fcf3812eef6ad71b300a371a32144bb",
+  "src/cfe/config.py": "322bcee507f6e99700af05692f3e8a9aee3edcd12db6a6e4e7989d59d38137d9",
+  "src/cfe/data.py": "dd1c99f42b2e1f7102b031d39a7408ff23a6dc5e7742223576fcaad9a08a60e0",
+  "src/cfe/gates.py": "f84e83f9f937d68ba19b636416b1d04ebf9f79696f85ca10378d5e298c08c656",
+  "src/cfe/io.py": "c9623da061c1478ebd096e7f0307ab81f8938d6b5f43ec3a9ef0a757f8cd7992",
+  "src/cfe/report.py": "3e8d0fabc866feda91d2f6d2c92ad7e2dc7b1aee77c850a7ddff0aa0073fc81c",
+  "src/cfe/run.py": "7b09904b9ec225195b88c85b19eef1e9ec7a96f439597b6077e8ac612df0f54d",
+  "src/cfe/stats.py": "096cae09e4568fef0e4e4e73ddfd567921db4482c062fc0baae54d582da2125f",
+  "src/cfe/strategies.py": "cf07ab91a4e731832e908c5908b86c1b61be9e6eed57f1285dff013c1ab2819f",
+  "requirements.txt": "0e0669d35edeeff451ef390d538c0a3c477e506a7fdc78c1dd03638969b1f12b"
+ },
+ "data_sha256": {
+  "minute_perp_BTCUSDT.parquet": "cbef30361c75a675a3e8b77d4d2ba857ae3563a2a9253c09e0703abf83deee68",
+  "minute_perp_ETHUSDT.parquet": "50cd0d29645d7822cd68acf95847e5136e83166c6b6f6e27ea4a5aee6d78454e",
+  "hourly_perp_BTCUSDT.parquet": "4a5b7302c4ce7d737b30a4b77c403f3dc5fba7e0e0f0954bb7e2d1cedb3f2cda",
+  "hourly_spot_BTCUSDT.parquet": "312e096d1d33197e57245056267ba37104f505287f33b803c5de13512ae48422",
+  "hourly_perp_ETHUSDT.parquet": "4768b2664976419cc96a29f20e8047984c59ea38f1d3956a599b87c8a576a6e8",
+  "hourly_spot_ETHUSDT.parquet": "662800cf434f2f7d7f3724b3e4d559fbf2267f03e3904cf03504a32582c29aaa",
+  "funding_BTCUSDT.parquet": "d9440bc426dc3864ea82be221d5d72745015976647abbea3752543b817d995ea",
+  "funding_ETHUSDT.parquet": "5e3372f10d9c412a797f39498dd27e1a86dfab7f2c8fddcd1de41ab7b523545b",
+  "flows.parquet": "5cb91aa903cdaeb6167c401f2f64875aa689a49940a964e129200fc34a3b0d48",
+  "sofr.parquet": "4a97331f3b2aeea614fc09e5f6935f5bbac4b0b92c84ea0fd6bf3c3ad1db732d"
+ },
+ "versions": {
+  "python": "3.12.15",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "pyarrow": "26.0.0",
+  "scipy": "1.18.1",
+  "statsmodels": "0.15.0",
+  "lxml": "6.0.2",
+  "holidays": "0.83",
+  "tzdata": "2025.2"
+ },
+ "configs": {
+  "D1": {
+   "role": "primary",
+   "description": "Funding carry, bitcoin and ether at equal weight",
+   "net": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.22050407571571928,
+    "ann_return": -0.008048398763623755,
+    "ann_vol": 0.004101159712040598,
+    "sharpe": -1.9624689913914966,
+    "skew": -0.9813586991288965,
+    "kurtosis": 9.94230965172243,
+    "max_drawdown": 0.03072528716129891,
+    "active_days": 546
+   },
+   "before_costs": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.3165460410203688,
+    "ann_return": 0.01155393049724346,
+    "ann_vol": 0.0022825930511156185,
+    "sharpe": 5.061756624377906,
+    "skew": 3.9520883410949317,
+    "kurtosis": 32.31374194906545,
+    "max_drawdown": 0.0011892127964507053,
+    "active_days": 540
+   },
+   "test": {
+    "months": 30,
+    "mean_pct_per_month": -0.06710674037615057,
+    "sharpe_monthly": -0.8309784323008873,
+    "hac_t": -1.0692573181059912,
+    "p_one_sided": 0.8369508152459237
+   },
+   "gross_bp_per_day": -0.5309389942317794,
+   "funding_bp_per_day": 0.8474850352521481,
+   "cost_bp_per_day": 0.5370501167360882,
+   "by_cost": {
+    "0": {
+     "sharpe": 5.061756624377906,
+     "mean_bp_per_day": 0.3165460410203688
+    },
+    "0.5": {
+     "sharpe": 0.6085899993955272,
+     "mean_bp_per_day": 0.048020982652324753
+    },
+    "1": {
+     "sharpe": -1.9624689913914966,
+     "mean_bp_per_day": -0.22050407571571928
+    },
+    "2": {
+     "sharpe": -3.9029738126559876,
+     "mean_bp_per_day": -0.7575541924518074
+    },
+    "3": {
+     "sharpe": -4.604342777636668,
+     "mean_bp_per_day": -1.2946043091878958
+    }
+   },
+   "break_even_cost_multiple": 0.5894162037319186,
+   "bootstrap_sharpe_ci95": [
+    -4.835632326386172,
+    1.4313934914176414
+   ],
+   "psr_vs_zero": 0.15251946430440794,
+   "dsr_benchmark_sharpe": 1.1182874970619987,
+   "dsr": 0.008064039235475558,
+   "by_year": {
+    "2024": {
+     "days": 275,
+     "sharpe": 2.485285686165654,
+     "mean_bp_per_day": 0.330822274860536
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -4.34840878418005,
+     "mean_bp_per_day": -0.46054329448749015
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -5.0040613595914305,
+     "mean_bp_per_day": -0.4549378909419971
+    }
+   },
+   "trades": 46,
+   "skipped": 0
+  },
+  "D2": {
+   "role": "primary",
+   "description": "Momentum into the 5pm ET break, combined rule, bitcoin, weekdays",
+   "net": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -3.0998543355765316,
+    "ann_return": -0.11314468324854339,
+    "ann_vol": 0.058899339524898495,
+    "sharpe": -1.9209839051032782,
+    "skew": -1.6744681480253467,
+    "kurtosis": 34.38459572872361,
+    "max_drawdown": 0.685728338244728,
+    "active_days": 800
+   },
+   "before_costs": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.3303505238803527,
+    "ann_return": 0.012057794121632872,
+    "ann_vol": 0.05841919233796004,
+    "sharpe": 0.20640124656084766,
+    "skew": -1.1685608045614522,
+    "kurtosis": 34.4779421008867,
+    "max_drawdown": 0.1223829461580378,
+    "active_days": 800
+   },
+   "test": {
+    "months": 69,
+    "mean_pct_per_month": -0.9429846739674116,
+    "sharpe_monthly": -2.3487711638816378,
+    "hac_t": -5.331075783090524,
+    "p_one_sided": 0.9999850000749996
+   },
+   "gross_bp_per_day": 0.3303505238803527,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 3.430204859456884,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.20640124656084766,
+     "mean_bp_per_day": 0.3303505238803527
+    },
+    "0.5": {
+     "sharpe": -0.8638296051536226,
+     "mean_bp_per_day": -1.3847519058480888
+    },
+    "1": {
+     "sharpe": -1.9209839051032782,
+     "mean_bp_per_day": -3.0998543355765316
+    },
+    "2": {
+     "sharpe": -3.937069094003903,
+     "mean_bp_per_day": -6.530059195033416
+    },
+    "3": {
+     "sharpe": -5.747934771210823,
+     "mean_bp_per_day": -9.9602640544903
+    }
+   },
+   "break_even_cost_multiple": 0.09630635411456392,
+   "bootstrap_sharpe_ci95": [
+    -2.743888405996386,
+    -1.1699270946784925
+   ],
+   "psr_vs_zero": 1.737536043667418e-05,
+   "dsr_benchmark_sharpe": 0.7302944697826723,
+   "dsr": 2.8644921028770808e-08,
+   "by_year": {
+    "2021": {
+     "days": 365,
+     "sharpe": -1.1528900150432253,
+     "mean_bp_per_day": -2.689670356236178
+    },
+    "2022": {
+     "days": 365,
+     "sharpe": -1.78804171677324,
+     "mean_bp_per_day": -3.591292588095191
+    },
+    "2023": {
+     "days": 365,
+     "sharpe": -1.660460699755777,
+     "mean_bp_per_day": -2.834525599434724
+    },
+    "2024": {
+     "days": 366,
+     "sharpe": -4.320659962790401,
+     "mean_bp_per_day": -4.637710989895976
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -3.198262123468897,
+     "mean_bp_per_day": -3.20328139474014
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -1.4876092057236212,
+     "mean_bp_per_day": -1.1459377308367638
+    }
+   },
+   "trades": 800,
+   "skipped": 0
+  },
+  "D3": {
+   "role": "primary",
+   "description": "Spot-fund flows, bitcoin, entry two days after the flow date",
+   "net": {
+    "days": 518,
+    "first_day": "2025-05-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -2.162984046925019,
+    "ann_return": -0.0789489177127632,
+    "ann_vol": 0.1867020044152712,
+    "sharpe": -0.4228605791353015,
+    "skew": 0.1991999756014261,
+    "kurtosis": 29.44618429949894,
+    "max_drawdown": 0.20288754661741293,
+    "active_days": 434
+   },
+   "before_costs": {
+    "days": 518,
+    "first_day": "2025-05-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.7429546487305738,
+    "ann_return": -0.027117844678665945,
+    "ann_vol": 0.18683438649275003,
+    "sharpe": -0.1451437563915368,
+    "skew": 0.23589429614266363,
+    "kurtosis": 29.51650181182487,
+    "max_drawdown": 0.18949509461267638,
+    "active_days": 356
+   },
+   "test": {
+    "months": 17,
+    "mean_pct_per_month": -0.6590739625336238,
+    "sharpe_monthly": -0.40486792708581054,
+    "hac_t": -0.7237008377362163,
+    "p_one_sided": 0.7356963215183924
+   },
+   "gross_bp_per_day": -0.6674044239058304,
+   "funding_bp_per_day": -0.07555022482474223,
+   "cost_bp_per_day": 1.420029398194447,
+   "by_cost": {
+    "0": {
+     "sharpe": -0.1451437563915368,
+     "mean_bp_per_day": -0.7429546487305738
+    },
+    "0.5": {
+     "sharpe": -0.2839601460077133,
+     "mean_bp_per_day": -1.452969347827795
+    },
+    "1": {
+     "sharpe": -0.4228605791353015,
+     "mean_bp_per_day": -2.162984046925019
+    },
+    "2": {
+     "sharpe": -0.7008292668317692,
+     "mean_bp_per_day": -3.583013445119467
+    },
+    "3": {
+     "sharpe": -0.9788806248030635,
+     "mean_bp_per_day": -5.0030428433139145
+    }
+   },
+   "break_even_cost_multiple": -0.5231966673895859,
+   "bootstrap_sharpe_ci95": [
+    -1.9054861628739144,
+    0.8351391312029881
+   ],
+   "psr_vs_zero": 0.3252445353377137,
+   "dsr_benchmark_sharpe": 1.5055406183592013,
+   "dsr": 0.016261804261241707,
+   "by_year": {
+    "2025": {
+     "days": 245,
+     "sharpe": -0.7151931395634226,
+     "mean_bp_per_day": -2.664364377173512
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -0.28055732030130676,
+     "mean_bp_per_day": -1.7130273402917575
+    }
+   },
+   "trades": 356,
+   "skipped": 0
+  },
+  "D4": {
+   "role": "primary",
+   "description": "Fade of the 3-4pm ET window, bitcoin, NYSE trading days",
+   "net": {
+    "days": 994,
+    "first_day": "2024-01-11",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -5.531341773891303,
+    "ann_return": -0.20189397474703258,
+    "ann_vol": 0.07903448919001729,
+    "sharpe": -2.5545047082120376,
+    "skew": -1.2822542330148194,
+    "kurtosis": 10.355312126708718,
+    "max_drawdown": 0.5675778372871344,
+    "active_days": 682
+   },
+   "before_costs": {
+    "days": 994,
+    "first_day": "2024-01-11",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.6437085279195603,
+    "ann_return": 0.023495361269063954,
+    "ann_vol": 0.0787146937910706,
+    "sharpe": 0.2984876156849036,
+    "skew": -1.0927735199157946,
+    "kurtosis": 10.196425300276148,
+    "max_drawdown": 0.10071759348783904,
+    "active_days": 681
+   },
+   "test": {
+    "months": 33,
+    "mean_pct_per_month": -1.666107188863017,
+    "sharpe_monthly": -3.1002361046125055,
+    "hac_t": -6.492935828611428,
+    "p_one_sided": 1.0
+   },
+   "gross_bp_per_day": 0.6437085279195603,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 6.175050301810864,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.2984876156849036,
+     "mean_bp_per_day": 0.6437085279195603
+    },
+    "0.5": {
+     "sharpe": -1.1323490936509817,
+     "mean_bp_per_day": -2.4438166229858713
+    },
+    "1": {
+     "sharpe": -2.5545047082120376,
+     "mean_bp_per_day": -5.531341773891303
+    },
+    "2": {
+     "sharpe": -5.3309019510370685,
+     "mean_bp_per_day": -11.706392075702169
+    },
+    "3": {
+     "sharpe": -7.956016592712352,
+     "mean_bp_per_day": -17.881442377513036
+    }
+   },
+   "break_even_cost_multiple": 0.10424344684784019,
+   "bootstrap_sharpe_ci95": [
+    -3.5329694707761528,
+    -1.6070576840349502
+   ],
+   "psr_vs_zero": 3.2295586406550616e-09,
+   "dsr_benchmark_sharpe": 1.0645779805935793,
+   "dsr": 3.1555258954316625e-15,
+   "by_year": {
+    "2024": {
+     "days": 356,
+     "sharpe": -1.2521730584033413,
+     "mean_bp_per_day": -3.2067635736344307
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -3.6585052778917526,
+     "mean_bp_per_day": -7.567506561185763
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -3.4923886559337,
+     "mean_bp_per_day": -5.84031500440035
+    }
+   },
+   "trades": 682,
+   "skipped": 0
+  },
+  "D1-BTC": {
+   "role": "secondary",
+   "description": "Funding carry, bitcoin only",
+   "net": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.21147331411180254,
+    "ann_return": -0.007718775965080793,
+    "ann_vol": 0.0051575144780130885,
+    "sharpe": -1.4966077163693041,
+    "skew": -2.4583449236127057,
+    "kurtosis": 14.621012283209724,
+    "max_drawdown": 0.027252053870474045,
+    "active_days": 454
+   },
+   "before_costs": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.3049633663596842,
+    "ann_return": 0.011131162872128474,
+    "ann_vol": 0.0025192779612541473,
+    "sharpe": 4.418394096770153,
+    "skew": 3.640845855384061,
+    "kurtosis": 31.12101186900608,
+    "max_drawdown": 0.0009651518053844881,
+    "active_days": 445
+   },
+   "test": {
+    "months": 30,
+    "mean_pct_per_month": -0.0643583785946919,
+    "sharpe_monthly": -0.7561995187188796,
+    "hac_t": -1.1797537650413559,
+    "p_one_sided": 0.8592607036964816
+   },
+   "gross_bp_per_day": -0.5418087328320115,
+   "funding_bp_per_day": 0.8467720991916957,
+   "cost_bp_per_day": 0.5164366804714867,
+   "by_cost": {
+    "0": {
+     "sharpe": 4.418394096770153,
+     "mean_bp_per_day": 0.3049633663596842
+    },
+    "0.5": {
+     "sharpe": 0.5006500627477584,
+     "mean_bp_per_day": 0.046745026123940846
+    },
+    "1": {
+     "sharpe": -1.4966077163693041,
+     "mean_bp_per_day": -0.21147331411180254
+    },
+    "2": {
+     "sharpe": -2.869541432734946,
+     "mean_bp_per_day": -0.7279099945832894
+    },
+    "3": {
+     "sharpe": -3.350794383927253,
+     "mean_bp_per_day": -1.244346675054776
+    }
+   },
+   "break_even_cost_multiple": 0.5905145352597039,
+   "bootstrap_sharpe_ci95": [
+    -3.499056671087582,
+    1.0356705173039495
+   ],
+   "psr_vs_zero": 0.15837602524280114,
+   "dsr_benchmark_sharpe": 1.1182874970619987,
+   "dsr": 0.006538082952359354,
+   "by_year": {
+    "2024": {
+     "days": 275,
+     "sharpe": 1.5076320074685663,
+     "mean_bp_per_day": 0.23786562290781224
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -3.625223395077509,
+     "mean_bp_per_day": -0.5314992533373946
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -2.1416346400405333,
+     "mean_bp_per_day": -0.23623060298745435
+    }
+   },
+   "trades": 22,
+   "skipped": 0
+  },
+  "D1-ETH": {
+   "role": "secondary",
+   "description": "Funding carry, ether only",
+   "net": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.22953483731963611,
+    "ann_return": -0.008378021562166719,
+    "ann_vol": 0.005424981563170446,
+    "sharpe": -1.544341020261545,
+    "skew": -2.4164218906256507,
+    "kurtosis": 12.445396501597855,
+    "max_drawdown": 0.03621305538713909,
+    "active_days": 418
+   },
+   "before_costs": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.32812871568105345,
+    "ann_return": 0.01197669812235845,
+    "ann_vol": 0.0025755597143066094,
+    "sharpe": 4.650134126508812,
+    "skew": 2.7387613933898196,
+    "kurtosis": 22.239651509443654,
+    "max_drawdown": 0.001455408329013808,
+    "active_days": 408
+   },
+   "test": {
+    "months": 30,
+    "mean_pct_per_month": -0.06985510215760923,
+    "sharpe_monthly": -0.7979106944502312,
+    "hac_t": -0.9286271134611297,
+    "p_one_sided": 0.8040909795451022
+   },
+   "gross_bp_per_day": -0.5200692556315472,
+   "funding_bp_per_day": 0.8481979713126003,
+   "cost_bp_per_day": 0.5576635530006895,
+   "by_cost": {
+    "0": {
+     "sharpe": 4.650134126508812,
+     "mean_bp_per_day": 0.32812871568105345
+    },
+    "0.5": {
+     "sharpe": 0.5013038143694576,
+     "mean_bp_per_day": 0.049296939180708696
+    },
+    "1": {
+     "sharpe": -1.544341020261545,
+     "mean_bp_per_day": -0.22953483731963611
+    },
+    "2": {
+     "sharpe": -2.972781111177716,
+     "mean_bp_per_day": -0.7871983903203255
+    },
+    "3": {
+     "sharpe": -3.483266422696841,
+     "mean_bp_per_day": -1.344861943321015
+    }
+   },
+   "break_even_cost_multiple": 0.5883990695024814,
+   "bootstrap_sharpe_ci95": [
+    -3.8442261223300624,
+    1.508642812497144
+   ],
+   "psr_vs_zero": 0.15250527246279427,
+   "dsr_benchmark_sharpe": 1.1182874970619987,
+   "dsr": 0.006882213842473996,
+   "by_year": {
+    "2024": {
+     "days": 275,
+     "sharpe": 2.628535503594567,
+     "mean_bp_per_day": 0.4237789268132596
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -2.798142504864643,
+     "mean_bp_per_day": -0.3895873356375857
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -4.748633037713537,
+     "mean_bp_per_day": -0.6736451788965399
+    }
+   },
+   "trades": 24,
+   "skipped": 0
+  },
+  "D1-always": {
+   "role": "secondary",
+   "description": "Funding carry held throughout, bitcoin and ether",
+   "net": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.1580251923043238,
+    "ann_return": -0.005767919519107819,
+    "ann_vol": 0.0027323137943911393,
+    "sharpe": -2.111001866238107,
+    "skew": 0.7941957818614936,
+    "kurtosis": 13.229693711568089,
+    "max_drawdown": 0.022624301406963407,
+    "active_days": 913
+   },
+   "before_costs": {
+    "days": 913,
+    "first_day": "2024-04-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.1351908602413242,
+    "ann_return": -0.004934466398808334,
+    "ann_vol": 0.002657241036533377,
+    "sharpe": -1.8569886325577045,
+    "skew": 1.3451654153630932,
+    "kurtosis": 11.758313947390128,
+    "max_drawdown": 0.02192013616872345,
+    "active_days": 913
+   },
+   "test": {
+    "months": 30,
+    "mean_pct_per_month": -0.048092333524615886,
+    "sharpe_monthly": -0.667308357932289,
+    "hac_t": -0.7971969471953058,
+    "p_one_sided": 0.7691461542692286
+   },
+   "gross_bp_per_day": -1.1723281143804625,
+   "funding_bp_per_day": 1.0371372541391384,
+   "cost_bp_per_day": 0.022834332062999597,
+   "by_cost": {
+    "0": {
+     "sharpe": -1.8569886325577045,
+     "mean_bp_per_day": -0.1351908602413242
+    },
+    "0.5": {
+     "sharpe": -2.015925061666996,
+     "mean_bp_per_day": -0.14660802627282404
+    },
+    "1": {
+     "sharpe": -2.111001866238107,
+     "mean_bp_per_day": -0.1580251923043238
+    },
+    "2": {
+     "sharpe": -2.129835471814431,
+     "mean_bp_per_day": -0.18085952436732342
+    },
+    "3": {
+     "sharpe": -2.0246616278315708,
+     "mean_bp_per_day": -0.20369385643032303
+    }
+   },
+   "break_even_cost_multiple": -5.920508638848491,
+   "bootstrap_sharpe_ci95": [
+    -7.571154249353851,
+    2.169642458325302
+   ],
+   "psr_vs_zero": 0.1753905531578403,
+   "dsr_benchmark_sharpe": 1.1182874970619987,
+   "dsr": 0.006267044523715008,
+   "by_year": {
+    "2024": {
+     "days": 275,
+     "sharpe": 2.2295026725424107,
+     "mean_bp_per_day": 0.21220961380494568
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -1.181217301907499,
+     "mean_bp_per_day": -0.07762964833313585
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -11.971191199758175,
+     "mean_bp_per_day": -0.6384608891157989
+    }
+   },
+   "trades": 2,
+   "skipped": 0
+  },
+  "D2-onfh": {
+   "role": "secondary",
+   "description": "First signal alone (previous 5pm to 10am ET)",
+   "net": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -5.4876414037881585,
+    "ann_return": -0.2002989112382678,
+    "ann_vol": 0.07565585793177886,
+    "sharpe": -2.64750036168889,
+    "skew": -0.27438273696418325,
+    "kurtosis": 19.54758632211774,
+    "max_drawdown": 1.162017688683223,
+    "active_days": 1499
+   },
+   "before_costs": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.9397049516191766,
+    "ann_return": 0.03429923073409994,
+    "ann_vol": 0.07537295612835444,
+    "sharpe": 0.4550601766990662,
+    "skew": -0.08250240274559105,
+    "kurtosis": 19.795561043777695,
+    "max_drawdown": 0.11555995130647345,
+    "active_days": 1498
+   },
+   "test": {
+    "months": 69,
+    "mean_pct_per_month": -1.6693564212393257,
+    "sharpe_monthly": -3.3419374834604034,
+    "hac_t": -8.104005969008295,
+    "p_one_sided": 1.0
+   },
+   "gross_bp_per_day": 0.9397049516191766,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 6.427346355407337,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.4550601766990662,
+     "mean_bp_per_day": 0.9397049516191766
+    },
+    "0.5": {
+     "sharpe": -1.100581679106162,
+     "mean_bp_per_day": -2.273968226084491
+    },
+    "1": {
+     "sharpe": -2.64750036168889,
+     "mean_bp_per_day": -5.4876414037881585
+    },
+    "2": {
+     "sharpe": -5.667980632135268,
+     "mean_bp_per_day": -11.914987759195496
+    },
+    "3": {
+     "sharpe": -8.522167362904714,
+     "mean_bp_per_day": -18.342334114602835
+    }
+   },
+   "break_even_cost_multiple": 0.14620418749156114,
+   "bootstrap_sharpe_ci95": [
+    -3.4774054669601524,
+    -1.9036618916190333
+   ],
+   "psr_vs_zero": 3.901679791137222e-09,
+   "dsr_benchmark_sharpe": 0.7302944697826723,
+   "dsr": 1.0026387935355326e-12,
+   "by_year": {
+    "2021": {
+     "days": 365,
+     "sharpe": -1.336613599675064,
+     "mean_bp_per_day": -3.8911301057907215
+    },
+    "2022": {
+     "days": 365,
+     "sharpe": -2.4685816540791867,
+     "mean_bp_per_day": -6.253935623545706
+    },
+    "2023": {
+     "days": 365,
+     "sharpe": -3.024423425787312,
+     "mean_bp_per_day": -5.821023671113169
+    },
+    "2024": {
+     "days": 366,
+     "sharpe": -3.4963548777742535,
+     "mean_bp_per_day": -5.953646689309996
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -4.089984070083958,
+     "mean_bp_per_day": -6.3996993476517
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -4.17664556083247,
+     "mean_bp_per_day": -4.30773525716818
+    }
+   },
+   "trades": 1499,
+   "skipped": 0
+  },
+  "D2-slh": {
+   "role": "secondary",
+   "description": "Second signal alone (4:00-4:30pm ET, reversed)",
+   "net": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -6.706350259265807,
+    "ann_return": -0.24478178446320195,
+    "ann_vol": 0.07582643300901092,
+    "sharpe": -3.2281854064546724,
+    "skew": -1.1985737779738603,
+    "kurtosis": 19.579721452161646,
+    "max_drawdown": 1.4255752099134245,
+    "active_days": 1499
+   },
+   "before_costs": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.27900390385847124,
+    "ann_return": -0.0101836424908342,
+    "ann_vol": 0.07539245920165917,
+    "sharpe": -0.1350750804347033,
+    "skew": -1.0249486068356968,
+    "kurtosis": 19.741340653100593,
+    "max_drawdown": 0.2283682168200737,
+    "active_days": 1498
+   },
+   "test": {
+    "months": 69,
+    "mean_pct_per_month": -2.0400911875650625,
+    "sharpe_monthly": -3.1436008071524664,
+    "hac_t": -7.344312735264584,
+    "p_one_sided": 1.0
+   },
+   "gross_bp_per_day": -0.27900390385847124,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 6.427346355407337,
+   "by_cost": {
+    "0": {
+     "sharpe": -0.1350750804347033,
+     "mean_bp_per_day": -0.27900390385847124
+    },
+    "0.5": {
+     "sharpe": -1.6882921614712578,
+     "mean_bp_per_day": -3.492677081562138
+    },
+    "1": {
+     "sharpe": -3.2281854064546724,
+     "mean_bp_per_day": -6.706350259265807
+    },
+    "2": {
+     "sharpe": -6.222021264672654,
+     "mean_bp_per_day": -13.133696614673141
+    },
+    "3": {
+     "sharpe": -9.036108553523011,
+     "mean_bp_per_day": -19.561042970080482
+    }
+   },
+   "break_even_cost_multiple": -0.04340887956407465,
+   "bootstrap_sharpe_ci95": [
+    -4.183776984944848,
+    -2.337619394350304
+   ],
+   "psr_vs_zero": 1.693466050259279e-11,
+   "dsr_benchmark_sharpe": 0.7302944697826723,
+   "dsr": 1.559905319018451e-16,
+   "by_year": {
+    "2021": {
+     "days": 365,
+     "sharpe": -2.5007075033359154,
+     "mean_bp_per_day": -7.307388688873413
+    },
+    "2022": {
+     "days": 365,
+     "sharpe": -2.797457381258391,
+     "mean_bp_per_day": -7.093033114288506
+    },
+    "2023": {
+     "days": 365,
+     "sharpe": -2.793942417551497,
+     "mean_bp_per_day": -5.371315198989155
+    },
+    "2024": {
+     "days": 366,
+     "sharpe": -5.566147152920989,
+     "mean_bp_per_day": -9.518496601957363
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -4.008572593039453,
+     "mean_bp_per_day": -6.269877140458716
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -3.8786788693693306,
+     "mean_bp_per_day": -3.9841402045053447
+    }
+   },
+   "trades": 1499,
+   "skipped": 0
+  },
+  "D2-alldays": {
+   "role": "secondary",
+   "description": "Combined rule on all seven days",
+   "net": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -4.586184393015368,
+    "ann_return": -0.16739573034506092,
+    "ann_vol": 0.06605267844077349,
+    "sharpe": -2.5342761913153486,
+    "skew": -0.8466345837875471,
+    "kurtosis": 27.49847897818681,
+    "max_drawdown": 0.9626401040939371,
+    "active_days": 1111
+   },
+   "before_costs": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.17751260555537943,
+    "ann_return": 0.00647921010277135,
+    "ann_vol": 0.06553437817668,
+    "sharpe": 0.0988673469259671,
+    "skew": -0.49653986066917144,
+    "kurtosis": 28.04161896569534,
+    "max_drawdown": 0.11397097565912684,
+    "active_days": 1111
+   },
+   "test": {
+    "months": 69,
+    "mean_pct_per_month": -1.3951305856433707,
+    "sharpe_monthly": -2.8448252634876914,
+    "hac_t": -7.400856282349015,
+    "p_one_sided": 1.0
+   },
+   "gross_bp_per_day": 0.17751260555537943,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 4.763696998570747,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.0988673469259671,
+     "mean_bp_per_day": 0.17751260555537943
+    },
+    "0.5": {
+     "sharpe": -1.2254913043053772,
+     "mean_bp_per_day": -2.204335893729994
+    },
+    "1": {
+     "sharpe": -2.5342761913153486,
+     "mean_bp_per_day": -4.586184393015368
+    },
+    "2": {
+     "sharpe": -5.043536834980438,
+     "mean_bp_per_day": -9.349881391586116
+    },
+    "3": {
+     "sharpe": -7.32823895345715,
+     "mean_bp_per_day": -14.113578390156865
+    }
+   },
+   "break_even_cost_multiple": 0.03726362226830098,
+   "bootstrap_sharpe_ci95": [
+    -3.402202012150849,
+    -1.7604044521633853
+   ],
+   "psr_vs_zero": 1.1667936851318852e-06,
+   "dsr_benchmark_sharpe": 0.7302944697826723,
+   "dsr": 1.4748045754830029e-09,
+   "by_year": {
+    "2021": {
+     "days": 365,
+     "sharpe": -2.04957376954605,
+     "mean_bp_per_day": -5.5842232909529805
+    },
+    "2022": {
+     "days": 365,
+     "sharpe": -1.407225986501481,
+     "mean_bp_per_day": -3.1471409303578817
+    },
+    "2023": {
+     "days": 365,
+     "sharpe": -2.5344789056404067,
+     "mean_bp_per_day": -4.430971530828928
+    },
+    "2024": {
+     "days": 366,
+     "sharpe": -4.748658048500501,
+     "mean_bp_per_day": -5.609466320123924
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -4.323667806202107,
+     "mean_bp_per_day": -4.781653292004843
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -3.7210870682908195,
+     "mean_bp_per_day": -3.750111233190879
+    }
+   },
+   "trades": 1111,
+   "skipped": 0
+  },
+  "D2-ETH": {
+   "role": "secondary",
+   "description": "Combined rule on ether",
+   "net": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -2.065158017406208,
+    "ann_return": -0.0753782676353266,
+    "ann_vol": 0.07543273109953581,
+    "sharpe": -0.9992779863142253,
+    "skew": 0.19910026710217602,
+    "kurtosis": 34.20512392828927,
+    "max_drawdown": 0.5943533890300324,
+    "active_days": 825
+   },
+   "before_costs": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 1.4722407439087029,
+    "ann_return": 0.05373678715266765,
+    "ann_vol": 0.07535429256846349,
+    "sharpe": 0.7131217787473068,
+    "skew": 0.6145802264759456,
+    "kurtosis": 34.57338196384673,
+    "max_drawdown": 0.12109071257982762,
+    "active_days": 825
+   },
+   "test": {
+    "months": 69,
+    "mean_pct_per_month": -0.6282270548602364,
+    "sharpe_monthly": -0.8509104320152406,
+    "hac_t": -2.3253891572690546,
+    "p_one_sided": 0.9856050719746401
+   },
+   "gross_bp_per_day": 1.4722407439087029,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 3.537398761314911,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.7131217787473068,
+     "mean_bp_per_day": 1.4722407439087029
+    },
+    "0.5": {
+     "sharpe": -0.14374670866160158,
+     "mean_bp_per_day": -0.2964586367487525
+    },
+    "1": {
+     "sharpe": -0.9992779863142253,
+     "mean_bp_per_day": -2.065158017406208
+    },
+    "2": {
+     "sharpe": -2.675218367037649,
+     "mean_bp_per_day": -5.60255677872112
+    },
+    "3": {
+     "sharpe": -4.258474693804292,
+     "mean_bp_per_day": -9.139955540036034
+    }
+   },
+   "break_even_cost_multiple": 0.41619303992786094,
+   "bootstrap_sharpe_ci95": [
+    -1.9181696256552772,
+    -0.09633363275144831
+   ],
+   "psr_vs_zero": 0.029901473223458423,
+   "dsr_benchmark_sharpe": 0.7302944697826723,
+   "dsr": 0.00023466149992962907,
+   "by_year": {
+    "2021": {
+     "days": 365,
+     "sharpe": 0.2366208506614285,
+     "mean_bp_per_day": 0.7822684157684892
+    },
+    "2022": {
+     "days": 365,
+     "sharpe": -0.806682516000493,
+     "mean_bp_per_day": -1.8534935363114127
+    },
+    "2023": {
+     "days": 365,
+     "sharpe": -3.045015729676378,
+     "mean_bp_per_day": -4.8719171624243405
+    },
+    "2024": {
+     "days": 366,
+     "sharpe": -2.521278240101069,
+     "mean_bp_per_day": -2.765614147775912
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -1.7362268218430401,
+     "mean_bp_per_day": -3.275085119948535
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": 0.1317343608609274,
+     "mean_bp_per_day": 0.1542164894308387
+    }
+   },
+   "trades": 825,
+   "skipped": 0
+  },
+  "D2-nodelay": {
+   "role": "secondary",
+   "description": "Combined rule entering at 4:30pm ET, without delay",
+   "net": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -3.2331945476354798,
+    "ann_return": -0.11801160098869501,
+    "ann_vol": 0.0604262901079109,
+    "sharpe": -1.9529843844119288,
+    "skew": -1.7047442401159407,
+    "kurtosis": 36.648610330313545,
+    "max_drawdown": 0.7031669638795164,
+    "active_days": 800
+   },
+   "before_costs": {
+    "days": 2099,
+    "first_day": "2021-01-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.19701031182140447,
+    "ann_return": 0.007190876381481263,
+    "ann_vol": 0.05991312245284739,
+    "sharpe": 0.12002172624437325,
+    "skew": -1.2148956865469245,
+    "kurtosis": 36.86741934097917,
+    "max_drawdown": 0.13629257795735739,
+    "active_days": 800
+   },
+   "test": {
+    "months": 69,
+    "mean_pct_per_month": -0.9835471529691119,
+    "sharpe_monthly": -2.3157753286583715,
+    "hac_t": -5.533623849363994,
+    "p_one_sided": 0.9999950000249999
+   },
+   "gross_bp_per_day": 0.19701031182140447,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 3.430204859456884,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.12002172624437325,
+     "mean_bp_per_day": 0.19701031182140447
+    },
+    "0.5": {
+     "sharpe": -0.9231192714584469,
+     "mean_bp_per_day": -1.5180921179070372
+    },
+    "1": {
+     "sharpe": -1.9529843844119288,
+     "mean_bp_per_day": -3.2331945476354798
+    },
+    "2": {
+     "sharpe": -3.9184128024512166,
+     "mean_bp_per_day": -6.6633994070923634
+    },
+    "3": {
+     "sharpe": -5.689224880994283,
+     "mean_bp_per_day": -10.093604266549251
+    }
+   },
+   "break_even_cost_multiple": 0.05743397840460111,
+   "bootstrap_sharpe_ci95": [
+    -2.7397658616602776,
+    -1.2340336514789998
+   ],
+   "psr_vs_zero": 2.3830396214187795e-05,
+   "dsr_benchmark_sharpe": 0.7302944697826723,
+   "dsr": 4.414603176975711e-08,
+   "by_year": {
+    "2021": {
+     "days": 365,
+     "sharpe": -1.4727343137426117,
+     "mean_bp_per_day": -3.5066796497135124
+    },
+    "2022": {
+     "days": 365,
+     "sharpe": -1.7052067409895673,
+     "mean_bp_per_day": -3.478568646920324
+    },
+    "2023": {
+     "days": 365,
+     "sharpe": -1.6092175253105974,
+     "mean_bp_per_day": -2.9052095613021494
+    },
+    "2024": {
+     "days": 366,
+     "sharpe": -4.416991895944926,
+     "mean_bp_per_day": -4.710148360446917
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -3.040273984428262,
+     "mean_bp_per_day": -3.09613306884093
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -1.4243763301286274,
+     "mean_bp_per_day": -1.1811551915374556
+    }
+   },
+   "trades": 800,
+   "skipped": 0
+  },
+  "D3-lag3": {
+   "role": "secondary",
+   "description": "Spot-fund flows, entry three days after the flow date",
+   "net": {
+    "days": 518,
+    "first_day": "2025-05-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -1.7108545609187744,
+    "ann_return": -0.062446191473535265,
+    "ann_vol": 0.18398796504409068,
+    "sharpe": -0.3394036749010769,
+    "skew": -3.293927165987379,
+    "kurtosis": 43.678157697769734,
+    "max_drawdown": 0.38019678745112795,
+    "active_days": 434
+   },
+   "before_costs": {
+    "days": 518,
+    "first_day": "2025-05-01",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -0.2807439997288416,
+    "ann_return": -0.01024715599010272,
+    "ann_vol": 0.18389250872662713,
+    "sharpe": -0.05572361843916134,
+    "skew": -3.261568436050818,
+    "kurtosis": 43.53935374619925,
+    "max_drawdown": 0.34396044013664673,
+    "active_days": 356
+   },
+   "test": {
+    "months": 17,
+    "mean_pct_per_month": -0.5213074485623092,
+    "sharpe_monthly": -0.35545257915714734,
+    "hac_t": -0.38854514857839034,
+    "p_one_sided": 0.6316868415657921
+   },
+   "gross_bp_per_day": -0.20337560217563114,
+   "funding_bp_per_day": -0.0773683975532105,
+   "cost_bp_per_day": 1.4301105611899334,
+   "by_cost": {
+    "0": {
+     "sharpe": -0.05572361843916134,
+     "mean_bp_per_day": -0.2807439997288416
+    },
+    "0.5": {
+     "sharpe": -0.19760565704804553,
+     "mean_bp_per_day": -0.9957992803238079
+    },
+    "1": {
+     "sharpe": -0.3394036749010769,
+     "mean_bp_per_day": -1.7108545609187744
+    },
+    "2": {
+     "sharpe": -0.6226585074661503,
+     "mean_bp_per_day": -3.1409651221087085
+    },
+    "3": {
+     "sharpe": -0.9053108586247111,
+     "mean_bp_per_day": -4.571075683298641
+    }
+   },
+   "break_even_cost_multiple": -0.1963092975799344,
+   "bootstrap_sharpe_ci95": [
+    -1.8728215430017394,
+    1.4832758274201876
+   ],
+   "psr_vs_zero": 0.3335545900752271,
+   "dsr_benchmark_sharpe": 1.5055406183592013,
+   "dsr": 0.012163885943343939,
+   "by_year": {
+    "2025": {
+     "days": 245,
+     "sharpe": -0.7744853290673028,
+     "mean_bp_per_day": -3.3386038132742852
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -0.044472451827460915,
+     "mean_bp_per_day": -0.25005394983049734
+    }
+   },
+   "trades": 356,
+   "skipped": 0
+  },
+  "D4-placebo": {
+   "role": "secondary",
+   "description": "Fade on days without NYSE trading (placebo)",
+   "net": {
+    "days": 994,
+    "first_day": "2024-01-11",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": -1.958873691113029,
+    "ann_return": -0.07149888972562556,
+    "ann_vol": 0.04866104638788194,
+    "sharpe": -1.4693249535922621,
+    "skew": -6.120766092489455,
+    "kurtosis": 131.67474793881166,
+    "max_drawdown": 0.19471204489663613,
+    "active_days": 312
+   },
+   "before_costs": {
+    "days": 994,
+    "first_day": "2024-01-11",
+    "last_day": "2026-09-30",
+    "mean_bp_per_day": 0.8660760070761053,
+    "ann_return": 0.031611774258277846,
+    "ann_vol": 0.04840704635690753,
+    "sharpe": 0.6530407582648748,
+    "skew": -5.486682955895393,
+    "kurtosis": 128.75266981178535,
+    "max_drawdown": 0.05693581662312308,
+    "active_days": 312
+   },
+   "test": {
+    "months": 33,
+    "mean_pct_per_month": -0.5900364996867731,
+    "sharpe_monthly": -1.6079575958151302,
+    "hac_t": -3.2683288001476325,
+    "p_one_sided": 0.9966500167499163
+   },
+   "gross_bp_per_day": 0.8660760070761053,
+   "funding_bp_per_day": 0.0,
+   "cost_bp_per_day": 2.824949698189134,
+   "by_cost": {
+    "0": {
+     "sharpe": 0.6530407582648748,
+     "mean_bp_per_day": 0.8660760070761053
+    },
+    "0.5": {
+     "sharpe": -0.4123143924291291,
+     "mean_bp_per_day": -0.5463988420184619
+    },
+    "1": {
+     "sharpe": -1.4693249535922621,
+     "mean_bp_per_day": -1.958873691113029
+    },
+    "2": {
+     "sharpe": -3.478289223923129,
+     "mean_bp_per_day": -4.783823389302164
+    },
+    "3": {
+     "sharpe": -5.248774144094284,
+     "mean_bp_per_day": -7.6087730874913
+    }
+   },
+   "break_even_cost_multiple": 0.3065810366928949,
+   "bootstrap_sharpe_ci95": [
+    -2.391600410618779,
+    -0.5962976084151057
+   ],
+   "psr_vs_zero": 0.002972894717407731,
+   "dsr_benchmark_sharpe": 1.0645779805935793,
+   "dsr": 2.416089986674338e-06,
+   "by_year": {
+    "2024": {
+     "days": 356,
+     "sharpe": -1.574490162662563,
+     "mean_bp_per_day": -2.5976732429535554
+    },
+    "2025": {
+     "days": 365,
+     "sharpe": -1.1773641309371419,
+     "mean_bp_per_day": -1.4004107492134574
+    },
+    "2026": {
+     "days": 273,
+     "sharpe": -1.8360382831986997,
+     "mean_bp_per_day": -1.8725232637801215
+    }
+   },
+   "trades": 312,
+   "skipped": 0
+  }
+ },
+ "trials": 14,
+ "holm": {
+  "D1": false,
+  "D2": false,
+  "D3": false,
+  "D4": false
+ },
+ "checks": {
+  "D1": {
+   "mean_net_bp_per_day_by_year": {
+    "2024": 0.330822274860536,
+    "2025": -0.46054329448749015,
+    "2026": -0.4549378909419971
+   },
+   "min_mean_bp_per_day_dropping_one_month": -0.32780227188942257,
+   "month_dropped": "2024-12",
+   "share_of_time_in_position": {
+    "BTCUSDT": 0.47353048557867833,
+    "ETHUSDT": 0.4308141657539248
+   },
+   "share_of_funding_prints_at_default": {
+    "BTCUSDT": 0.2117561153705732,
+    "ETHUSDT": 0.20700985761226726
+   },
+   "max_perp_rise_within_a_trade": 0.6141658997585171,
+   "pass": false
+  },
+  "D2": {
+   "regression": {
+    "n": 1499,
+    "const": {
+     "coef": -0.0001536417194751492,
+     "t": -1.1759595073948101
+    },
+    "r_onfh": {
+     "coef": 0.01297414525944262,
+     "t": 1.9030477175474376
+    },
+    "r_slh": {
+     "coef": -0.01546784285953872,
+     "t": -0.3674776278453594
+    }
+   },
+   "pass": true
+  },
+  "D3": {
+   "regression": {
+    "n": 356,
+    "const": {
+     "coef": -1.217354208981727e-05,
+     "t": -0.009984534356550525
+    },
+    "z": {
+     "coef": -0.0005139690347405955,
+     "t": -0.5382868223762238
+    },
+    "r_before_entry": {
+     "coef": 0.03081432979385572,
+     "t": 0.5857793440627641
+    }
+   },
+   "pass": false
+  },
+  "D4": {
+   "regression": {
+    "n": 682,
+    "const": {
+     "coef": 0.00040516382999863113,
+     "t": 2.359950295209282
+    },
+    "r_fix": {
+     "coef": -0.005664745697035758,
+     "t": -0.11803716215721158
+    }
+   },
+   "placebo_regression": {
+    "n": 312,
+    "const": {
+     "coef": -7.378923039819973e-05,
+     "t": -0.3303525732339059
+    },
+    "r_fix": {
+     "coef": 0.2855586387765427,
+     "t": 0.9684108841099512
+    }
+   },
+   "pass": true
+  }
+ },
+ "decisions": {
+  "D1": {
+   "criteria": {
+    "holm": false,
+    "necessary_condition": false,
+    "sharpe_positive_at_2x_costs": false
+   },
+   "pass": false
+  },
+  "D2": {
+   "criteria": {
+    "holm": false,
+    "necessary_condition": true,
+    "sharpe_positive_at_2x_costs": false
+   },
+   "pass": false
+  },
+  "D3": {
+   "criteria": {
+    "holm": false,
+    "necessary_condition": false,
+    "sharpe_positive_at_2x_costs": false
+   },
+   "pass": false
+  },
+  "D4": {
+   "criteria": {
+    "holm": false,
+    "necessary_condition": true,
+    "sharpe_positive_at_2x_costs": false
+   },
+   "pass": false
+  }
+ },
+ "finished_at": "2026-10-12T20:13:02+00:00"
+}

@@ -1,0 +1,154 @@
+{
+ "written_at": "2026-10-12T20:11:57+00:00",
+ "prereg_sha256": "bf986abb43a530a74ee121d3eac86ae093f389fbd1c65e169b4ad2a9d026bf5e",
+ "code_sha256": {
+  "src/cfe/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "src/cfe/collect.py": "3833ed241b8e9505ac6d16e5a779dcab6fcf3812eef6ad71b300a371a32144bb",
+  "src/cfe/config.py": "322bcee507f6e99700af05692f3e8a9aee3edcd12db6a6e4e7989d59d38137d9",
+  "src/cfe/data.py": "dd1c99f42b2e1f7102b031d39a7408ff23a6dc5e7742223576fcaad9a08a60e0",
+  "src/cfe/gates.py": "f84e83f9f937d68ba19b636416b1d04ebf9f79696f85ca10378d5e298c08c656",
+  "src/cfe/io.py": "c9623da061c1478ebd096e7f0307ab81f8938d6b5f43ec3a9ef0a757f8cd7992",
+  "src/cfe/report.py": "3e8d0fabc866feda91d2f6d2c92ad7e2dc7b1aee77c850a7ddff0aa0073fc81c",
+  "src/cfe/run.py": "7b09904b9ec225195b88c85b19eef1e9ec7a96f439597b6077e8ac612df0f54d",
+  "src/cfe/stats.py": "096cae09e4568fef0e4e4e73ddfd567921db4482c062fc0baae54d582da2125f",
+  "src/cfe/strategies.py": "cf07ab91a4e731832e908c5908b86c1b61be9e6eed57f1285dff013c1ab2819f",
+  "requirements.txt": "0e0669d35edeeff451ef390d538c0a3c477e506a7fdc78c1dd03638969b1f12b"
+ },
+ "files": {
+  "minute_perp_BTCUSDT.parquet": "cbef30361c75a675a3e8b77d4d2ba857ae3563a2a9253c09e0703abf83deee68",
+  "minute_perp_ETHUSDT.parquet": "50cd0d29645d7822cd68acf95847e5136e83166c6b6f6e27ea4a5aee6d78454e",
+  "hourly_perp_BTCUSDT.parquet": "4a5b7302c4ce7d737b30a4b77c403f3dc5fba7e0e0f0954bb7e2d1cedb3f2cda",
+  "hourly_spot_BTCUSDT.parquet": "312e096d1d33197e57245056267ba37104f505287f33b803c5de13512ae48422",
+  "hourly_perp_ETHUSDT.parquet": "4768b2664976419cc96a29f20e8047984c59ea38f1d3956a599b87c8a576a6e8",
+  "hourly_spot_ETHUSDT.parquet": "662800cf434f2f7d7f3724b3e4d559fbf2267f03e3904cf03504a32582c29aaa",
+  "funding_BTCUSDT.parquet": "d9440bc426dc3864ea82be221d5d72745015976647abbea3752543b817d995ea",
+  "funding_ETHUSDT.parquet": "5e3372f10d9c412a797f39498dd27e1a86dfab7f2c8fddcd1de41ab7b523545b",
+  "flows.parquet": "5cb91aa903cdaeb6167c401f2f64875aa689a49940a964e129200fc34a3b0d48",
+  "sofr.parquet": "4a97331f3b2aeea614fc09e5f6935f5bbac4b0b92c84ea0fd6bf3c3ad1db732d"
+ },
+ "gates": {
+  "minute_perp_BTCUSDT": {
+   "expected": 3067200,
+   "missing_share": 0.0,
+   "misaligned": 0,
+   "conflicting_duplicates": 0,
+   "bad_prices": 0,
+   "pass": true,
+   "spikes_reported_only": 0
+  },
+  "minute_perp_ETHUSDT": {
+   "expected": 3067200,
+   "missing_share": 0.0,
+   "misaligned": 0,
+   "conflicting_duplicates": 0,
+   "bad_prices": 0,
+   "pass": true,
+   "spikes_reported_only": 2
+  },
+  "hourly_perp_BTCUSDT": {
+   "expected": 24096,
+   "missing_share": 0.0,
+   "misaligned": 0,
+   "conflicting_duplicates": 0,
+   "bad_prices": 0,
+   "pass": true
+  },
+  "hourly_spot_BTCUSDT": {
+   "expected": 24096,
+   "missing_share": 0.0,
+   "misaligned": 0,
+   "conflicting_duplicates": 0,
+   "bad_prices": 0,
+   "pass": true
+  },
+  "hours_match_minutes_BTCUSDT": {
+   "hours_compared": 24096,
+   "share_equal": 1.0,
+   "pass": true
+  },
+  "spot_perp_gap_BTCUSDT": {
+   "hours": 21912,
+   "hours_compared": 21912,
+   "share_within": 1.0,
+   "corr_same_hour": 0.999729904218377,
+   "corr_spot_one_hour_later": -0.013642618366782036,
+   "corr_spot_one_hour_earlier": -0.01305723777477466,
+   "pass": true
+  },
+  "funding_BTCUSDT": {
+   "events": 2748,
+   "off_hour": 0,
+   "max_gap_hours": 8.0,
+   "conflicting_duplicates": 0,
+   "max_lag_ms": 26,
+   "intervals_seen": [
+    8.0
+   ],
+   "bad_rates": 0,
+   "rates_above_bound": 0,
+   "pass": true
+  },
+  "hourly_perp_ETHUSDT": {
+   "expected": 24096,
+   "missing_share": 0.0,
+   "misaligned": 0,
+   "conflicting_duplicates": 0,
+   "bad_prices": 0,
+   "pass": true
+  },
+  "hourly_spot_ETHUSDT": {
+   "expected": 24096,
+   "missing_share": 0.0,
+   "misaligned": 0,
+   "conflicting_duplicates": 0,
+   "bad_prices": 0,
+   "pass": true
+  },
+  "hours_match_minutes_ETHUSDT": {
+   "hours_compared": 24096,
+   "share_equal": 1.0,
+   "pass": true
+  },
+  "spot_perp_gap_ETHUSDT": {
+   "hours": 21912,
+   "hours_compared": 21912,
+   "share_within": 1.0,
+   "corr_same_hour": 0.9998426819478033,
+   "corr_spot_one_hour_later": 0.005500964538368907,
+   "corr_spot_one_hour_earlier": 0.0060024264507201434,
+   "pass": true
+  },
+  "funding_ETHUSDT": {
+   "events": 2748,
+   "off_hour": 0,
+   "max_gap_hours": 8.0,
+   "conflicting_duplicates": 0,
+   "max_lag_ms": 26,
+   "intervals_seen": [
+    8.0
+   ],
+   "bad_rates": 0,
+   "rates_above_bound": 0,
+   "pass": true
+  },
+  "flows": {
+   "trading_days": 435,
+   "missing": [],
+   "missing_share": 0.0,
+   "reported_on_other_days": [],
+   "duplicate_dates": 0,
+   "total_not_finite": 0,
+   "reported_days_without_ibit": 0,
+   "share_total_matches_funds": 1.0,
+   "pass": true
+  },
+  "sofr": {
+   "days": 913,
+   "days_without_prior_value": 0,
+   "max_stale_days": 4,
+   "implausible_values": 0,
+   "pass": true
+  }
+ },
+ "pass": true
+}

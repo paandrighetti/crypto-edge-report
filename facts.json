@@ -1,0 +1,527 @@
+{
+ "r1_trials": {
+  "value": 14,
+  "printed": "14",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_desc": {
+  "value": "Funding carry, bitcoin and ether at equal weight",
+  "printed": "Funding carry, bitcoin and ether at equal weight",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_from": {
+  "value": "2024-04-01",
+  "printed": "2024-04-01",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_to": {
+  "value": "2026-09-30",
+  "printed": "2026-09-30",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_sr_gross": {
+  "value": 5.061756624377906,
+  "printed": "5.06",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_sr": {
+  "value": -1.9624689913914966,
+  "printed": "-1.96",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_ci": {
+  "value": "[-4.84, 1.43]",
+  "printed": "[-4.84, 1.43]",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_t": {
+  "value": -1.0692573181059912,
+  "printed": "-1.07",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_p": {
+  "value": 0.8369508152459237,
+  "printed": "0.837",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_desc": {
+  "value": "Momentum into the 5pm ET break, combined rule, bitcoin, weekdays",
+  "printed": "Momentum into the 5pm ET break, combined rule, bitcoin, weekdays",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_from": {
+  "value": "2021-01-01",
+  "printed": "2021-01-01",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_to": {
+  "value": "2026-09-30",
+  "printed": "2026-09-30",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_sr_gross": {
+  "value": 0.20640124656084766,
+  "printed": "0.21",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_sr": {
+  "value": -1.9209839051032782,
+  "printed": "-1.92",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_ci": {
+  "value": "[-2.74, -1.17]",
+  "printed": "[-2.74, -1.17]",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_t": {
+  "value": -5.331075783090524,
+  "printed": "-5.33",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d2_p": {
+  "value": 0.9999850000749996,
+  "printed": "1.000",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_desc": {
+  "value": "Spot-fund flows, bitcoin, entry two days after the flow date",
+  "printed": "Spot-fund flows, bitcoin, entry two days after the flow date",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_from": {
+  "value": "2025-05-01",
+  "printed": "2025-05-01",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_to": {
+  "value": "2026-09-30",
+  "printed": "2026-09-30",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_sr_gross": {
+  "value": -0.1451437563915368,
+  "printed": "-0.15",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_sr": {
+  "value": -0.4228605791353015,
+  "printed": "-0.42",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_ci": {
+  "value": "[-1.91, 0.84]",
+  "printed": "[-1.91, 0.84]",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_t": {
+  "value": -0.7237008377362163,
+  "printed": "-0.72",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d3_p": {
+  "value": 0.7356963215183924,
+  "printed": "0.736",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_desc": {
+  "value": "Fade of the 3-4pm ET window, bitcoin, NYSE trading days",
+  "printed": "Fade of the 3-4pm ET window, bitcoin, NYSE trading days",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_from": {
+  "value": "2024-01-11",
+  "printed": "2024-01-11",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_to": {
+  "value": "2026-09-30",
+  "printed": "2026-09-30",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_sr_gross": {
+  "value": 0.2984876156849036,
+  "printed": "0.30",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_sr": {
+  "value": -2.5545047082120376,
+  "printed": "-2.55",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_ci": {
+  "value": "[-3.53, -1.61]",
+  "printed": "[-3.53, -1.61]",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_t": {
+  "value": -6.492935828611428,
+  "printed": "-6.49",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d4_p": {
+  "value": 1.0,
+  "printed": "1.000",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_gross_bp": {
+  "value": 0.3165460410203688,
+  "printed": "0.32",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_cost_bp": {
+  "value": 0.5370501167360882,
+  "printed": "0.54",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_d1_breakeven": {
+  "value": 58.94162037319186,
+  "printed": "59%",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_sr_lo": {
+  "value": -2.5545047082120376,
+  "printed": "-2.55",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r1_sr_hi": {
+  "value": -0.4228605791353015,
+  "printed": "-0.42",
+  "source": "sources/round1-flows/results.json"
+ },
+ "r2_universe": {
+  "value": 532,
+  "printed": "532",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_desc": {
+  "value": "Momentum (E1) and premium carry (E2) at inverse-volatility weights",
+  "printed": "Momentum (E1) and premium carry (E2) at inverse-volatility weights",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_sr": {
+  "value": 0.37603589776652163,
+  "printed": "0.38",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_ci": {
+  "value": "[-0.50, 1.51]",
+  "printed": "[-0.50, 1.51]",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_t": {
+  "value": 0.8096467509494998,
+  "printed": "0.81",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_p": {
+  "value": 0.2407287963560182,
+  "printed": "0.241",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_bound": {
+  "value": 1.505880236580396,
+  "printed": "1.51",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_from": {
+  "value": "2021-04-01",
+  "printed": "2021-04-01",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_desc": {
+  "value": "Trend on bitcoin and ether spot, 30-, 91- and 365-day signals, long or cash",
+  "printed": "Trend on bitcoin and ether spot, 30-, 91- and 365-day signals, long or cash",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_ir": {
+  "value": 0.8154636842354852,
+  "printed": "0.82",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_ci": {
+  "value": "[0.08, 1.48]",
+  "printed": "[0.08, 1.48]",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_t": {
+  "value": 2.0859322241300267,
+  "printed": "2.09",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_p": {
+  "value": 0.004749762511874406,
+  "printed": "0.0047",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_months": {
+  "value": 69,
+  "printed": "69",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_from": {
+  "value": "2021-01-01",
+  "printed": "2021-01-01",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e3_to": {
+  "value": "2026-09-29",
+  "printed": "2026-09-29",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e4_desc": {
+  "value": "Seven-day taker order flow, long the highest, quintiles",
+  "printed": "Seven-day taker order flow, long the highest, quintiles",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e4_sr": {
+  "value": 1.7891262265792454,
+  "printed": "1.79",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e4_dsr": {
+  "value": 0.9653265495173114,
+  "printed": "0.97",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_e4_bcm": {
+  "value": 7.082674899443685,
+  "printed": "7.1",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r3_desc": {
+  "value": "Seven-day taker order flow, long the highest quintile, contracts ranked 101 to 200",
+  "printed": "Seven-day taker order flow, long the highest quintile, contracts ranked 101 to 200",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_from": {
+  "value": "2023-03-01",
+  "printed": "2023-03-01",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_sr": {
+  "value": 1.1453265157285348,
+  "printed": "1.15",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_ci": {
+  "value": "[0.34, 1.96]",
+  "printed": "[0.34, 1.96]",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_t": {
+  "value": 2.7954285476347205,
+  "printed": "2.80",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_p": {
+  "value": 0.0167399163004185,
+  "printed": "0.017",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_alpha": {
+  "value": 1.9145947500839509,
+  "printed": "1.91%",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_alpha_t": {
+  "value": 1.3387476743221143,
+  "printed": "1.34",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_alpha_p": {
+  "value": 0.14677926610366948,
+  "printed": "0.147",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_corr": {
+  "value": 0.3453140203990279,
+  "printed": "0.35",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "dg_hours": {
+  "value": 23376,
+  "printed": "23,376",
+  "source": "sources/deribit-gamma/stage1.json"
+ },
+ "dg_h1_p": {
+  "value": 0.924068149943621,
+  "printed": "0.924",
+  "source": "sources/deribit-gamma/stage1.json"
+ },
+ "dg_h2_p": {
+  "value": 0.783718863085496,
+  "printed": "0.784",
+  "source": "sources/deribit-gamma/stage1.json"
+ },
+ "dg_h3_p": {
+  "value": 0.32026461068355894,
+  "printed": "0.320",
+  "source": "sources/deribit-gamma/stage1.json"
+ },
+ "dg_test_hours": {
+  "value": 13152,
+  "printed": "13,152",
+  "source": "sources/deribit-gamma/followup.json"
+ },
+ "dg_f1_p": {
+  "value": 0.5021461273530445,
+  "printed": "0.502",
+  "source": "sources/deribit-gamma/followup.json"
+ },
+ "dg_f2_p": {
+  "value": 0.2489,
+  "printed": "0.249",
+  "source": "sources/deribit-gamma/followup.json"
+ },
+ "ve_v1_p": {
+  "value": 0.7345086316545708,
+  "printed": "0.735",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_v2_p": {
+  "value": 0.990660093399066,
+  "printed": "0.991",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_v3_p": {
+  "value": 0.2847671523284767,
+  "printed": "0.285",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_p": {
+  "value": 0.006199938000619994,
+  "printed": "0.0062",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_v1_beta": {
+  "value": -0.12696858645689357,
+  "printed": "-0.13",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_v2_mean_bp": {
+  "value": -34.15077978721457,
+  "printed": "-34.2",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_v3_theta": {
+  "value": -0.07802147138749277,
+  "printed": "-0.078",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_weeks": {
+  "value": 74,
+  "printed": "74",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_mean_bp": {
+  "value": 36.576700600024246,
+  "printed": "36.6",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_t": {
+  "value": 3.337650420117365,
+  "printed": "3.34",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_won": {
+  "value": 81.08108108108108,
+  "printed": "81%",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_skew": {
+  "value": -2.8982134299030604,
+  "printed": "-2.9",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_worst": {
+  "value": -4.407113518547943,
+  "printed": "-4.4%",
+  "source": "sources/vol-edges/results.json"
+ },
+ "ve_t1_worst_entry": {
+  "value": "2025-10-10",
+  "printed": "2025-10-10",
+  "source": "sources/vol-edges/results.json"
+ },
+ "hl_trials": {
+  "value": 54,
+  "printed": "54",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_champion": {
+  "value": "mom14/50/quintile",
+  "printed": "mom14/50/quintile",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_sr_net": {
+  "value": 0.24,
+  "printed": "0.24",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_dsr": {
+  "value": 0.032,
+  "printed": "0.032",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_years": {
+  "value": "2/4",
+  "printed": "2/4",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_sr0": {
+  "value": 1.3063471264492956,
+  "printed": "1.31",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_sr_gross": {
+  "value": 1.3381390552047934,
+  "printed": "1.34",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_grid.csv"
+ },
+ "hl_grid_median": {
+  "value": -0.6334851964147852,
+  "printed": "-0.63",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_b_dll_p": {
+  "value": 0.9405297351324338,
+  "printed": "0.94",
+  "source": "sources/hl-alts-ml/hl_summary.json"
+ },
+ "hl_b_auc": {
+  "value": 0.534408962369924,
+  "printed": "0.534",
+  "source": "sources/hl-alts-ml/hl_summary.json"
+ },
+ "hl_b_auc_base": {
+  "value": 0.5582352347370563,
+  "printed": "0.558",
+  "source": "sources/hl-alts-ml/hl_summary.json"
+ },
+ "hl_b_configs": {
+  "value": 12,
+  "printed": "12",
+  "source": "sources/hl-alts-ml/hl_summary.json"
+ },
+ "hl_c_dll_p": {
+  "value": 0.7941029485257372,
+  "printed": "0.79",
+  "source": "sources/hl-alts-ml/a4_summary.json"
+ },
+ "hl_c_dg": {
+  "value": 2.0117234038000094,
+  "printed": "+2.0%",
+  "source": "sources/hl-alts-ml/a4_summary.json"
+ },
+ "hl_c_dg_t": {
+  "value": 0.37737800196101834,
+  "printed": "0.38",
+  "source": "sources/hl-alts-ml/a4_summary.json"
+ },
+ "pp_status": {
+  "value": "pending",
+  "printed": "pending",
+  "source": "sources"
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "D1_BTC": {
+  "calendar_days": 913,
+  "funding_times_in_window": 2739,
+  "funding_times_without_prices": 0,
+  "round_trips": 22,
+  "share_of_time_in_position": 0.47353,
+  "mean_price_bp": -0.541818,
+  "mean_funding_bp": 0.846772,
+  "mean_cost_bp": 0.516437,
+  "mean_net_bp": -0.211482,
+  "final_close_cost_bp_total": 0.0
+ },
+ "D2": {
+  "calendar_days": 2099,
+  "ny_weekdays_in_window": 1499,
+  "dates_considered": 1499,
+  "days_in_position": 800,
+  "days_long": 386,
+  "days_skipped": 0,
+  "mean_gross_bp": 0.330351,
+  "mean_cost_bp": 3.430205,
+  "mean_net_bp": -3.099854
+ },
+ "D3": {
+  "calendar_days": 518,
+  "flow_days_total": 689,
+  "days_signalled": 356,
+  "days_in_position": 356,
+  "days_skipped": 0,
+  "mean_abs_position": 0.272768,
+  "mean_gross_bp": -0.667404,
+  "mean_funding_bp": -0.07555,
+  "mean_cost_bp": 1.420029,
+  "mean_net_bp": -2.162984,
+  "midnights_minute_vs_hourly_close_differ": 0
+ },
+ "D4": {
+  "calendar_days": 994,
+  "ny_weekdays_in_window": 710,
+  "dates_considered": 682,
+  "days_in_position": 682,
+  "days_long": 339,
+  "days_skipped": 0,
+  "mean_gross_bp": 0.643709,
+  "mean_cost_bp": 6.17505,
+  "mean_net_bp": -5.531342
+ },
+ "versions": {
+  "python": "3.12.15",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "holidays": "0.83"
+ }
+}

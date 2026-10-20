@@ -1,0 +1,227 @@
+{
+ "verifier": "verify_vole.py (independent, written from the pre-registration only)",
+ "verifier_sha256": "2e344b40d691ee4611628612554ae780c301f4f44a66aab51a0b64d6e72badc3",
+ "prereg_sha256": "3d66bfa4b82af2cd4cbe46650a47b87620ddd208269767426e2bea687a0ea3ea",
+ "root": "/data",
+ "versions": {
+  "python": "3.12.15",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "pyarrow": "26.0.0",
+  "scipy": "1.18.1"
+ },
+ "tests": {
+  "V1": {
+   "statistic": {
+    "beta": -0.12701668075412245,
+    "t": -0.6650155057756898
+   },
+   "p_value": 0.7346218309545185,
+   "necessary_conditions": {
+    "beta_BTC_alone_positive": false,
+    "beta_ETH_alone_positive": false,
+    "beta_all_start_days_positive": false
+   },
+   "intermediate": {
+    "rows_used": {
+     "BTC": 57,
+     "ETH": 57
+    },
+    "rows_dropped": 0,
+    "start_days_T": 57,
+    "beta": -0.12701668075412245,
+    "se": 0.1909980739561361,
+    "t": -0.6650155057756898,
+    "coef_intercept_BTC": -0.5824778368592766,
+    "coef_intercept_ETH": -0.3216000729857037,
+    "coef_L": -0.3340994777049937,
+    "beta_BTC_alone": -0.1698174190595994,
+    "beta_ETH_alone": -0.10187439870273236,
+    "beta_all_start_days": -0.15768095969150284,
+    "rows_all_start_days": 3408
+   },
+   "p_value_for_holm": 0.7346218309545185,
+   "holm_rejects": false,
+   "pass": false
+  },
+  "V2": {
+   "statistic": {
+    "t_rule": -2.589654212993835,
+    "t_rule_minus_always_sell": -2.496943819837704
+   },
+   "p_value": 0.990310096899031,
+   "necessary_conditions": {
+    "rule_mean_positive_at_twice_costs": false
+   },
+   "intermediate": {
+    "fridays": 246,
+    "fridays_priced": 239,
+    "not_priced_reasons": {
+     "no_strike_or_price": 0,
+     "decision_marks": 6,
+     "pricing_marks": 1,
+     "half_spread": 0
+    },
+    "weeks_short": 16,
+    "weeks_long": 193,
+    "weeks_flat": 37,
+    "weeks_flat_priced": 30,
+    "rule_mean_weekly_return": -0.0034150779787214384,
+    "rule_minus_always_sell_mean": -0.006234845217686847,
+    "p_rule": 0.990310096899031,
+    "p_rule_minus_always_sell": 0.989740102598974,
+    "rule_mean_at_twice_costs": -0.00505051499880561,
+    "always_sell_mean": 0.0028197672389654073,
+    "always_buy_mean": -0.0065562865054719695,
+    "median_IV_priced": 46.521226796113645,
+    "median_IVp_priced": 46.45365641082485,
+    "median_half_spread_priced": 0.00022416000000000103,
+    "weeks_gap_within_0.1_of_threshold": [
+     {
+      "day": "2023-12-01",
+      "gap": 1.9832996656312218
+     },
+     {
+      "day": "2024-02-16",
+      "gap": 2.0489514858304076
+     },
+     {
+      "day": "2024-06-21",
+      "gap": -1.9974633598748568
+     },
+     {
+      "day": "2025-06-20",
+      "gap": -2.0686914236983682
+     },
+     {
+      "day": "2026-01-30",
+      "gap": -1.9477260719857767
+     }
+    ]
+   },
+   "p_value_for_holm": 0.990310096899031,
+   "holm_rejects": false,
+   "pass": false
+  },
+  "V3": {
+   "statistic": {
+    "theta": -0.07802147138749231,
+    "t": -0.6389759716070859
+   },
+   "p_value": 0.2847671523284767,
+   "necessary_conditions": {
+    "theta_negative_before_2024": true,
+    "theta_negative_from_2024": true
+   },
+   "intermediate": {
+    "event_days_in_range": 149,
+    "event_days_used": 149,
+    "clusters": 125,
+    "theta": -0.07802147138749231,
+    "se": 0.12210392073313935,
+    "t": -0.6389759716070859,
+    "theta_before_2024": -0.02931188064685497,
+    "theta_from_2024": -0.14673827652124988,
+    "days_with_IV2": 1731,
+    "bootstrap_count_le_t": 28476,
+    "realised_part": 0.2619187208452263,
+    "implied_part": 0.3399401922327183
+   },
+   "p_value_for_holm": 0.2847671523284767,
+   "holm_rejects": false,
+   "pass": false
+  },
+  "T1": {
+   "statistic": {
+    "mean": 0.0036576700600024206,
+    "t": 3.3376504201173542
+   },
+   "p_value": 0.007009929900700993,
+   "necessary_conditions": {
+    "mean_positive_at_twice_costs": true
+   },
+   "intermediate": {
+    "weekends": 74,
+    "weekends_priced": 74,
+    "release_fridays": 15,
+    "mean_weekend_return": 0.0036576700600024206,
+    "mean_at_twice_costs": 0.002568398615211761,
+    "mean_call_delta": 0.34557812172512475,
+    "mean_put_delta": -0.3397099028265274,
+    "share_won": 0.8108108108108109
+   },
+   "p_value_for_holm": 0.007009929900700993,
+   "holm_rejects": true,
+   "pass": true
+  }
+ },
+ "holm": {
+  "alpha": 0.05,
+  "order": [
+   "T1",
+   "V3",
+   "V1",
+   "V2"
+  ],
+  "rejected": [
+   "T1"
+  ],
+  "thresholds": {
+   "T1": 0.0125,
+   "V3": 0.016666666666666666,
+   "V1": 0.025,
+   "V2": 0.05
+  }
+ },
+ "passing_tests": [
+  "T1"
+ ],
+ "errors": [],
+ "data": {
+  "trade_scan": {
+   "files_read": 1918,
+   "rows_read": 20874423,
+   "rows_btc_option": 20874423,
+   "rows_without_time": 0,
+   "window_rows": 430774,
+   "pool_rows": 895566,
+   "names_parsed": 73865
+  },
+  "trade_files_missing": [],
+  "minutes_present": {
+   "BTC": 3067200,
+   "ETH": 3067200
+  },
+  "funding_events": 6480,
+  "delivery_prices": 2639,
+  "listed_btc_options": 124506,
+  "event_rows": 505,
+  "garch_fits": {
+   "BTC": {
+    "n_fits": 246,
+    "n_unconverged": 0
+   },
+   "ETH": {
+    "n_fits": 244,
+    "n_unconverged": 0
+   }
+  }
+ },
+ "runtime_seconds": 25.966366052627563,
+ "total_seconds": 25.99171471595764,
+ "log": [
+  "[11:30:57] pre-registration verified (3d66bfa4b82af2cd4cbe46650a47b87620ddd208269767426e2bea687a0ea3ea); root /data",
+  "[11:30:57] events: 505 rows, CPI 223, NFP 226, FOMC 56",
+  "[11:30:57] BTCUSDT: 3067200 minutes, RV finite on 2129 days",
+  "[11:30:58] ETHUSDT: 3067200 minutes, RV finite on 2129 days",
+  "[11:30:58] funding events 6480, delivery prices 2639, listed BTC options 124506",
+  "[11:31:08] trade scan: 1918 files, 20874423 rows, 430774 window rows, 895566 spread rows (10.4s)",
+  "[11:31:14] forwards and mark volatilities: 430774 trades (5.9s)",
+  "[11:31:18] BTC forecasts: GARCH fits 246, unconverged 0 (3.4s)",
+  "[11:31:21] ETH forecasts: GARCH fits 244, unconverged 0 (6.9s)",
+  "[11:31:21] V1: beta -0.12701668075412245, t -0.6650155057756898, p 0.7346218309545185",
+  "[11:31:22] V2: priced 239, p 0.990310096899031 (0.9s)",
+  "[11:31:22] V3: used 149, theta -0.07802147138749231, p 0.2847671523284767 (0.3s)",
+  "[11:31:23] T1: priced 74, p 0.007009929900700993 (0.3s)"
+ ]
+}
