@@ -10,16 +10,18 @@ bitcoin.
 - [SUMMARY.md](SUMMARY.md): one page.
 - [REPORT.md](REPORT.md): the full synthesis, with the method, each study's decision, what runs
   forward, limitations and references.
-- `sources/<study>/REPORT.md`: each study's own generated report, with every configuration.
+- `sources/<study>/`: each study's own outputs, with every configuration: a generated `REPORT.md` for
+  rounds 1 to 3, the dealer-gamma study and the volatility study; `ALTS_ML.md` (in French) for the
+  Hyperliquid study; `results.csv` and `verdict.txt` (in French) for the perpetual premia.
 
 Its companion on prediction markets is [pm-edge-report](https://github.com/paandrighetti/pm-edge-report).
 
 ## How the figures are produced
 
-No figure in REPORT.md or SUMMARY.md is typed by hand.
+No measured figure in REPORT.md or SUMMARY.md is typed by hand.
 
-1. `sources/` holds each study's outputs as its single run wrote them, with a `MANIFEST.sha256` per
-   folder; [SOURCES.md](SOURCES.md) gives where each was copied from.
+1. `sources/` holds each study's outputs as its run wrote them, with a `MANIFEST.sha256` per folder;
+   [SOURCES.md](SOURCES.md) gives where each was copied from.
 2. `src/cedge/facts.py` reads every printed figure from those files and checks each statement the
    text makes about a decision or a sign; if a source no longer supports one, the build fails.
 3. `templates/` holds the prose, with a placeholder for each figure; a test fails if a template

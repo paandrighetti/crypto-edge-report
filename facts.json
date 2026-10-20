@@ -189,6 +189,11 @@
   "printed": "-0.42",
   "source": "sources/round1-flows/results.json"
  },
+ "r1_v_diff": {
+  "value": "0.000009",
+  "printed": "0.000009",
+  "source": "sources/round1-flows/POST_RESULTS.md"
+ },
  "r2_universe": {
   "value": 532,
   "printed": "532",
@@ -269,10 +274,30 @@
   "printed": "2026-09-29",
   "source": "sources/round2-slow/results.json"
  },
- "r2_e4_desc": {
-  "value": "Seven-day taker order flow, long the highest, quintiles",
-  "printed": "Seven-day taker order flow, long the highest, quintiles",
+ "r2_e4_desc_lc": {
+  "value": "seven-day taker order flow, long the highest, quintiles",
+  "printed": "seven-day taker order flow, long the highest, quintiles",
   "source": "sources/round2-slow/results.json"
+ },
+ "r2_comp_p4": {
+  "value": 0.2407287963560182,
+  "printed": "0.2407",
+  "source": "sources/round2-slow/results.json"
+ },
+ "r2_v_comp_p": {
+  "value": 0.23945880270598646,
+  "printed": "0.2395",
+  "source": "sources/round2-slow/verification.json"
+ },
+ "r2_v_e3_p": {
+  "value": 0.005649717514124294,
+  "printed": "0.0056",
+  "source": "sources/round2-slow/verification.json"
+ },
+ "r2_v_checks": {
+  "value": 860,
+  "printed": "860",
+  "source": "sources/round2-slow/verification.json"
  },
  "r2_e4_sr": {
   "value": 1.7891262265792454,
@@ -338,6 +363,31 @@
   "value": 0.3453140203990279,
   "printed": "0.35",
   "source": "sources/round3-e4b/results.json"
+ },
+ "r3_alpha_p4": {
+  "value": 0.14677926610366948,
+  "printed": "0.1468",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_v_alpha_p": {
+  "value": 0.14687685312314688,
+  "printed": "0.1469",
+  "source": "sources/round3-e4b/verification.json"
+ },
+ "r3_v_hash_frozen": {
+  "value": "0f0eff79",
+  "printed": "0f0eff79",
+  "source": "sources/round3-e4b/verification.json"
+ },
+ "r3_v_hash_run": {
+  "value": "862424a5",
+  "printed": "862424a5",
+  "source": "sources/round3-e4b/results.json"
+ },
+ "r3_v_checks": {
+  "value": 1100,
+  "printed": "1,100",
+  "source": "sources/round3-e4b/verification.json"
  },
  "dg_hours": {
   "value": 23376,
@@ -444,6 +494,26 @@
   "printed": "2025-10-10",
   "source": "sources/vol-edges/results.json"
  },
+ "ve_v_diff": {
+  "value": 0.00034999650003497695,
+  "printed": "0.0003",
+  "source": "sources/vol-edges/verification.json"
+ },
+ "ve_v_t1_p": {
+  "value": 0.007009929900700993,
+  "printed": "0.0070",
+  "source": "sources/vol-edges/verification.json"
+ },
+ "ve_v_hash_frozen": {
+  "value": "3d66bfa4",
+  "printed": "3d66bfa4",
+  "source": "sources/vol-edges/verification.json"
+ },
+ "ve_v_hash_run": {
+  "value": "0ec4603c",
+  "printed": "0ec4603c",
+  "source": "sources/vol-edges/results.json"
+ },
  "hl_trials": {
   "value": 54,
   "printed": "54",
@@ -452,6 +522,11 @@
  "hl_champion": {
   "value": "mom14/50/quintile",
   "printed": "mom14/50/quintile",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_champion_text": {
+  "value": "14-day momentum on the 50 contracts with the highest median dollar volume, long the top quintile and short the bottom one",
+  "printed": "14-day momentum on the 50 contracts with the highest median dollar volume, long the top quintile and short the bottom one",
   "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
  },
  "hl_sr_net": {
@@ -464,9 +539,14 @@
   "printed": "0.032",
   "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
  },
- "hl_years": {
-  "value": "2/4",
-  "printed": "2/4",
+ "hl_years_pos": {
+  "value": 2,
+  "printed": "2",
+  "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
+ },
+ "hl_years_n": {
+  "value": 4,
+  "printed": "4",
   "source": "sources/hl-alts-ml/xs_ls_tradeable_verdict.json"
  },
  "hl_sr0": {
@@ -503,6 +583,11 @@
   "value": 12,
   "printed": "12",
   "source": "sources/hl-alts-ml/hl_summary.json"
+ },
+ "hl_c_configs": {
+  "value": 5,
+  "printed": "5",
+  "source": "sources/hl-alts-ml/a4_summary.json"
  },
  "hl_c_dll_p": {
   "value": 0.7941029485257372,

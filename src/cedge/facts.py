@@ -95,6 +95,15 @@ def round1(f: Facts) -> None:
     for n in ("D2", "D4"):
         claim(all(v["mean_bp_per_day"] < 0 for v in d["configs"][n]["by_year"].values()),
               f"{n} loses money net of costs in every year")
+    v = _json(SRC / "round1-flows" / "verification.json")
+    gap = max(abs(v[n]["mean_net_bp"] - d["configs"][n]["net"]["mean_bp_per_day"]) for n in ("D2", "D3", "D4"))
+    claim(gap < 1e-6,
+          "round 1's second implementation reproduces the daily net means of D2 to D4 to the decimals it prints")
+    src_p = SRC / "round1-flows" / "POST_RESULTS.md"
+    m = re.search(r"largest absolute difference across price, funding and cost components is ([0-9.]+) bp a day, "
+                  r"and the trade counts match", " ".join(src_p.read_text(encoding="utf-8").split()))
+    claim(m is not None, "round 1's post-results note states the largest difference and that the trade counts match")
+    f.put("r1_v_diff", m.group(1), "", src_p)
 
 
 # --------------------------------------------------------------------------- round 2
@@ -123,7 +132,21 @@ def round2(f: Facts) -> None:
     f.put("r2_e3_months", e3["timing"]["months"], "{}", src)
     f.put("r2_e3_from", e3["net"]["first_day"], "", src)
     f.put("r2_e3_to", e3["net"]["last_day"], "", src)
-    f.put("r2_e4_desc", e4["description"], "", src)
+    f.put("r2_e4_desc_lc", e4["description"][:1].lower() + e4["description"][1:], "", src)
+    descriptive = {k: c["dsr"] for k, c in d["configs"].items() if c.get("role") == "descriptive"}
+    claim(max(descriptive, key=descriptive.get) == "E4",
+          "E4 has the highest deflated Sharpe ratio of round 2's descriptive designs")
+    src_v = SRC / "round2-slow" / "verification.json"
+    v = _json(src_v)
+    vd = v["decision"]
+    claim(vd["E3"]["passes"] and not vd["composite"]["passes"]
+          and vd["composite"]["verdict"].startswith("fail, inconclusive"),
+          "round 2's second implementation takes the run's decisions")
+    f.put("r2_comp_p4", comp["test"]["p_one_sided"], "{:.4f}", src)
+    f.put("r2_v_comp_p", vd["holm"]["p_values"]["composite"], "{:.4f}", src_v)
+    f.put("r2_v_e3_p", vd["holm"]["p_values"]["E3"], "{:.4f}", src_v)
+    claim(v["spot_checks"]["mismatches"] == 0, "round 2's spot checks find no mismatch")
+    f.put("r2_v_checks", v["spot_checks"]["comparisons"], "{:,}", src_v)
     f.put("r2_e4_sr", e4["net"]["sharpe"], "{:.2f}", src)
     f.put("r2_e4_dsr", e4["dsr"], "{:.2f}", src)
     f.put("r2_e4_bcm", e4["break_even_cost_multiple"], "{:.1f}", src)
@@ -151,6 +174,19 @@ def round3(f: Facts) -> None:
     f.put("r3_alpha_t", ref["hac_t"], "{:.2f}", src)
     f.put("r3_alpha_p", ref["p_one_sided"], "{:.3f}", src)
     f.put("r3_corr", ref["corr_monthly"], "{:.2f}", src)
+    f.put("r3_alpha_p4", ref["p_one_sided"], "{:.4f}", src)
+    src_v = SRC / "round3-e4b" / "verification.json"
+    v = _json(src_v)
+    claim(v["decision"]["verdict"].startswith("fail, inconclusive") and not v["decision"]["passes"],
+          "round 3's second implementation takes the run's decision")
+    f.put("r3_v_alpha_p", v["intercept"]["p_value"], "{:.4f}", src_v)
+    meta = v["meta"]
+    claim(meta["preregistration_sha256_found"] == d["prereg_sha256"] != meta["preregistration_sha256_expected"],
+          "round 3's second implementation was written from the frozen pre-registration, which the run amended")
+    f.put("r3_v_hash_frozen", v["meta"]["preregistration_sha256_expected"][:8], "", src_v)
+    f.put("r3_v_hash_run", d["prereg_sha256"][:8], "", src)
+    claim(v["spot_checks"]["mismatches"] == 0, "round 3's spot checks find no mismatch")
+    f.put("r3_v_checks", v["spot_checks"]["comparisons"], "{:,}", src_v)
 
 
 # --------------------------------------------------------------------------- dealer gamma
@@ -188,6 +224,21 @@ def vol(f: Facts) -> None:
     f.put("ve_t1_skew", t1["strangle"]["skewness"], "{:.1f}", src)
     f.put("ve_t1_worst", t1["worst_weekend"]["return"] * 100, "{:.1f}%", src)
     f.put("ve_t1_worst_entry", t1["worst_weekend"]["entry"][:10], "", src)
+    src_v = SRC / "vol-edges" / "verification.json"
+    v = _json(src_v)
+    claim(sorted(v["passing_tests"]) == sorted(k for k, ok in dec["pass"].items() if ok),
+          "the volatility study's second implementation passes the same tests")
+    f.put("ve_v_diff", max(abs(v["tests"][k]["p_value"] - dec["p_one_sided"][k]) for k in ("V1", "V2", "V3")),
+          "{:.4f}", src_v)
+    f.put("ve_v_t1_p", v["tests"]["T1"]["p_value"], "{:.4f}", src_v)
+    vs = v["tests"]["T1"]["statistic"]
+    claim(abs(vs["mean"] - t1["test"]["mean"]) < 1e-12 and abs(vs["t"] - t1["test"]["t"]) < 1e-9,
+          "the second implementation finds T1's mean and t-statistic")
+    claim(t1["test"]["mean"] > 0, "the weekend strangle's mean return is positive")
+    claim(v["prereg_sha256"] != d["prereg_sha256"],
+          "the volatility study's second implementation checked the frozen pre-registration")
+    f.put("ve_v_hash_frozen", v["prereg_sha256"][:8], "", src_v)
+    f.put("ve_v_hash_run", d["prereg_sha256"][:8], "", src)
     claim(t1["strangle"]["skewness"] < 0, "the strangle's weekly returns are negatively skewed")
     claim(t1["worst_weekend"]["entry"].startswith("2025-10-10"), "the worst weekend is that of 10 October 2025")
 
@@ -200,16 +251,27 @@ def hl_alts(f: Facts) -> None:
     checks = {c["rule"]: c for c in v["checks"]}
     f.put("hl_trials", v["n_trials"], "{}", src)
     f.put("hl_champion", v["champion"], "", src)
+    sig, n_top, scheme = v["champion"].split("/")
+    m = re.fullmatch(r"([a-z]+?)(\d+)", sig)
+    names = {"mom": "momentum", "rev": "reversal", "carry": "carry", "resmom": "residual momentum"}
+    claim(m is not None and m.group(1) in names and scheme in ("quintile", "rank"),
+          "the best cell's label is understood")
+    weights = "long the top quintile and short the bottom one" if scheme == "quintile" else "weighted by rank"
+    f.put("hl_champion_text", f"{m.group(2)}-day {names[m.group(1)]} on the {n_top} contracts with the highest median "
+                              f"dollar volume, {weights}", "", src)
     f.put("hl_sr_net", float(next(c["value"] for r, c in checks.items() if r.startswith("Sharpe net"))), "{:.2f}", src)
     f.put("hl_dsr", float(next(c["value"] for r, c in checks.items() if r.startswith("Sharpe deflat"))), "{:.3f}", src)
-    f.put("hl_years", next(c["value"] for r, c in checks.items() if "annees positives" in r), "", src)
+    years = next(c["value"] for r, c in checks.items() if "annees positives" in r)
+    pos, n = (int(x) for x in years.split("/"))
+    f.put("hl_years_pos", pos, "{}", src)
+    f.put("hl_years_n", n, "{}", src)
     f.put("hl_sr0", v["sr0_annual"], "{:.2f}", src)
     src_g = SRC / "hl-alts-ml" / "xs_ls_tradeable_grid.csv"
-    sig, n_top, scheme = v["champion"].split("/")
     cell = next(r for r in csv.DictReader(src_g.open(encoding="utf-8"))
                 if (r["signal"], r["n_top"], r["scheme"]) == (sig, n_top, scheme))
     claim(abs(float(cell["sr_net_15"]) - f.raw["hl_sr_net"]) < 0.005, "the grid and the verdict agree on the best cell")
     claim(float(cell["sr_gross"]) > 0, "the best long/short cell earns before costs")
+    claim(float(cell["sr_gross"]) > float(cell["sr_net_15"]), "costs lower the best cell's Sharpe ratio")
     f.put("hl_sr_gross", float(cell["sr_gross"]), "{:.2f}", src_g)
     f.put("hl_grid_median", v["grid_median_sr_net_15"], "{:.2f}", src)
     fin = _json(SRC / "hl-alts-ml" / "xs_ls_final_verdict.json")
@@ -228,6 +290,9 @@ def hl_alts(f: Facts) -> None:
     a = _json(src_c)
     pa = a["configs"][a["primary"]]
     claim(a["verdict"] == "REJET", "meta-labeling of the BTC and ETH trend rule is rejected")
+    claim(all(c["dll_mean"] < 0 for c in a["configs"].values()),
+          "in every configuration of arc C the filter predicts worse than the signal alone")
+    f.put("hl_c_configs", len(a["configs"]), "{}", src_c)
     f.put("hl_c_dll_p", pa["dll_p"], "{:.2f}", src_c)
     f.put("hl_c_dg", pa["dg_ann"] * 100, "{:+.1f}%", src_c)
     f.put("hl_c_dg_t", pa["dg_t_nw"], "{:.2f}", src_c)
@@ -253,6 +318,11 @@ def perp_premia(f: Facts) -> None:
         claim(retained is not None, f"the verdict file states the decision on {name}")
         f.put(f"pp_{key}_verdict", "retained" if retained.group(1) == "RETENUE" else "rejected", "",
               SRC / "perp-premia" / "verdict.txt")
+    claim(f.raw["pp_carry_verdict"] == f.raw["pp_mom_verdict"] == "rejected", "both premia are rejected")
+    claim(len([k for k in rows if k != "btc_buy_and_hold"]) == 13, "thirteen configurations are declared")
+    primary = rows["carry_lb7_h10"]
+    claim(float(primary["is_sharpe"]) > 0 > float(primary["oos_sharpe"]),
+          "the primary carry has a positive Sharpe ratio before 2023 and a negative one after")
     f.put("pp_btc_oos_sr", float(rows["carry_lb7_h10"]["oos_btc_sharpe"]), "{:.2f}", src)
     f.put("pp_carry_is_sr", float(rows["carry_lb7_h10"]["is_sharpe"]), "{:.2f}", src)
     carry = [r for k, r in rows.items() if k.startswith("carry_")]
