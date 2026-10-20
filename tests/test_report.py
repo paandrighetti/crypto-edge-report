@@ -8,8 +8,8 @@ from cedge.facts import ROOT, _fmt
 # years, dates of fixed schedules, section numbers and bibliographic references. Every measured
 # figure must be a placeholder.
 ALLOWED = [
-    r"\b(?:19|20)\d\d\b", r"^\s*(\d+\.|##\s*\d+\.)", r"\b[DEHFVT]\d\b", r"\b\d{1,2} (?:January|February|March|"
-    r"April|May|June|July|August|September|October|November|December)\b", r"\b5pm\b", r"\b3pm to 4pm\b",
+    r"\b(?:19|20)\d\d\b", r"^\s*(\d+\.|##\s*\d+\.)", r"\b[DEHFVT]\d\b", (r"\b\d{1,2} (?:January|February|March|"
+    r"April|May|June|July|August|September|October|November|December)\b"), r"\b5pm\b", r"\b3pm to 4pm\b",
     r"\b101 to 200\b", r"\b21-day\b", r"\b30% tax\b", r"\b0\.95\b", r"\b50%", r"\b15 bp\b",
     r"(?i)\bsections? \d( (to|and) \d)?\b", r"(?i)\brounds? \d( (to|and) \d)?\b", r"\bSHA-256\b", r"Paper \d+(-\d+)?",
     r"\d+\(\d+\), \d+-\d+", r"\b95%", r"REPORT-2\.md", r"POST_RESULTS-2\.md", r"MANIFEST\.sha256",
@@ -45,7 +45,7 @@ def test_manifests_match_the_sources():
     manifests = list((ROOT / "sources").glob("*/MANIFEST.sha256"))
     assert manifests
     for manifest in manifests:
-        r = subprocess.run(["sha256sum", "-c", "--quiet", manifest.name], cwd=manifest.parent)
+        r = subprocess.run(["sha256sum", "-c", "--quiet", manifest.name], cwd=manifest.parent, check=False)
         assert r.returncode == 0, manifest
 
 
