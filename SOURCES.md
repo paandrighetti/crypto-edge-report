@@ -1,6 +1,7 @@
 # Sources
 
-Each folder of `sources/` holds outputs copied, unchanged, from where the study ran. `MANIFEST.sha256`
+Each folder of `sources/` holds outputs copied, unchanged, from where the study ran (protocols, for
+`forward-protocols`). `MANIFEST.sha256`
 in each folder gives their SHA-256; the test suite checks them.
 
 | Folder | Study | Copied from |
@@ -12,6 +13,7 @@ in each folder gives their SHA-256; the test suite checks them.
 | `vol-edges` | Volatility forecasts and the weekend strangle | same, `results/vol-edges/` |
 | `hl-alts-ml` | Hyperliquid alts long/short and meta-labeling | research repository, branch `research/managed-beta-92k`, commit `cb264d75a531`, `research/reports/`, `research/PROTOCOL_ALTS_ML.md` and `research/results/` |
 | `perp-premia` | Funding carry and time-series momentum | operations repository, `results/perp-premia-test/` and `projects/perp-premia-test/`, commit 6513bb1cec35 |
+| `forward-protocols` | Protocols of the forward tests of E3 (e3-forward) and E4 (e4-confirm, study D) | operations repository, `projects/e3-forward/PREREGISTRATION.md` at its freeze, commit `099e130` of 15 October 2026, and `projects/e4-confirm/PREREGISTRATION.md` with its amendment 1, commit `dfee587` of 15 October 2026 |
 
 What each study records about its run:
 
@@ -21,4 +23,7 @@ What each study records about its run:
   commit and the SHA-256 of the second protocol (`REPORT-2.md`, `followup.json`);
 - Hyperliquid: the commit of the protocol, in `ALTS_ML.md` (in French);
 - perpetual premia: the SHA-256 of the protocol, the code and the data at the restart, in `source.restart.sha256`
-  and `data.restart.sha256`.
+  and `data.restart.sha256`;
+- forward protocols: E4's SHA-256 is the `prereg_sha256` that study B's `results.json` and `gates.json` record;
+  E3's is the one its freeze commit states. Each look records the SHA-256 of the protocol it runs under; a dated
+  amendment, written into the protocol, changes it.
