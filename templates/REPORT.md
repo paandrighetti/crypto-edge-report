@@ -247,10 +247,9 @@ None of these rules is traded. Three will be followed as paper tests on data tha
 - **T1**, the weekend strangle, from Friday 30 October 2026, with a look on costs in January 2027 and
   looks on returns in October 2027 and October 2028.
 
-The protocols of E3 and E4 were frozen in October 2026 and are reproduced unchanged in
-[sources/forward-protocols](sources/forward-protocols), with their SHA-256; E4's is the one study B
-ran under, as its `results.json` records. That of T1 is under review and will be added once frozen,
-before its window opens on 30 October 2026.
+The protocols of E3, E4 and T1 were frozen in October 2026 and are reproduced unchanged in
+[sources/forward-protocols](sources/forward-protocols), with their SHA-256, each published before its
+window opened; E4's is the one study B ran under, as its `results.json` records.
 
 ## 10. What the studies say together
 
